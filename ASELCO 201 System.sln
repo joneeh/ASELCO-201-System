@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASELCO 201 System", "ASELCO 201 System\ASELCO 201 System.csproj", "{DA02503D-8761-429D-8F85-6469738DAC65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA02503D-8761-429D-8F85-6469738DAC65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA02503D-8761-429D-8F85-6469738DAC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA02503D-8761-429D-8F85-6469738DAC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA02503D-8761-429D-8F85-6469738DAC65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C0326AA-6B7F-46E4-B894-BAAE46A9C358}
+	EndGlobalSection
+EndGlobal
