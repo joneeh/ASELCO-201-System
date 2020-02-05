@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace ASELCO_201_System
 {
@@ -17,10 +17,36 @@ namespace ASELCO_201_System
         {
             InitializeComponent();
         }
+        
+        SqlConnection connection = new SqlConnection(@" Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gege\Documents\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
 
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;Initial Catalog='aselco201file';username=root;password=password");
-        MySqlDataAdapter query;
-        DataTable table = new DataTable();
+        private String fName;
+        private String lName;
+
+        private void getTheName(String username)
+        {
+            String queryuser = "SELECT firstname AS a, lastname AS b FROM login WHERE username = @username";
+            try
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(queryuser, connection);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.ExecuteScalar();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    fName = rdr["a"].ToString();
+                    lName = rdr["b"].ToString();
+                }
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -29,10 +55,19 @@ namespace ASELCO_201_System
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand("Select * from login where username=@username AND password=@password", connection);
+            cmd.Parameters.AddWithValue("@username", username.Text);
+            cmd.Parameters.AddWithValue("@password", password.Text);
+            connection.Open();
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            int count = ds.Tables[0].Rows.Count;
+            string str;
 
-            query = new MySqlDataAdapter("SELECT username, password FROM `login` WHERE `username` = '" + username.Text + "' AND `password` = '" + password.Text + "'", connection);
-            query.Fill(table);
-
+            str = "select * from login";
+            SqlCommand com = new SqlCommand(str, connection);
+            SqlDataReader reader = com.ExecuteReader();
 
             if (String.IsNullOrEmpty(username.Text) && String.IsNullOrEmpty(password.Text))
             {
@@ -50,22 +85,31 @@ namespace ASELCO_201_System
                 labelMessage.Text = "Please fill the password field!";
             }
 
-            else if (table.Rows.Count <= 0)
+            else if (count == 0)
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Invalid username or password!";
+
+                username.Text = "";
+                password.Text = ""; 
+                username.Focus();
             }
             else
             {
                 username.Text = String.Empty;
                 password.Text = String.Empty;
+                this.getTheName(username.Text);
 
-                aselco201filesystem main = new aselco201filesystem();
-                main.Show();
 
+                MessageBox.Show("Login Successfuly!");
                 this.Hide();
+                aselco201filesystem main = new aselco201filesystem();
+                main.Uname = fName.Trim();
+                main.Lname = lName.Trim();
+                main.Show();
             }
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {            
@@ -75,11 +119,6 @@ namespace ASELCO_201_System
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             this.AcceptButton = button1;
-        }
-
-        private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -110,7 +110,6 @@
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ASELCO 201 FILE SYSTEM";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.loginForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
