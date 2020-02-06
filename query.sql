@@ -1,16 +1,11 @@
-create database aselco201file;
-
-use aselco201file;
-
-create table login(
-id int not null auto_increment,
-username varchar(20) not null,
-password varchar(30) not null,
-fname varchar(30) not null,
-lname varchar(30) not null,
-position varchar(30) not null,
-department varchar(30) not null,
-primary key (id)
+﻿CREATE TABLE [dbo].[login] (
+    [Id]             INT           IDENTITY (1, 1) NOT NULL,
+    [username]       NVARCHAR (20) NOT NULL,
+    [password]       NVARCHAR (50) NOT NULL,
+    [profilePicture] IMAGE         NULL,
+    [fName]          VARCHAR (30)  NOT NULL,
+    [lName]          VARCHAR (30)  NOT NULL,
+    [position]       VARCHAR (30)  NOT NULL,
+    [department]     VARCHAR (30)  NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
-
-select * from login where username="joni" and password="password";

@@ -1,29 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ASELCO_201_System
 {
     public partial class aselco201filesystem : Form
     {
+
         private String uname;
-        public aselco201filesystem()
-        {
-            InitializeComponent();
-        }
 
         public String Uname
         {
             get { return uname; }
             set { uname = value; }
         }
-
         private String lname;
 
         public String Lname
@@ -32,9 +21,9 @@ namespace ASELCO_201_System
             set { lname = value; }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public aselco201filesystem()
         {
-            label1.Text = Uname + " " + Lname;
+            InitializeComponent();
         }
 
         private void aselco201filesystem_FormClosing(object sender, FormClosingEventArgs e)
@@ -63,7 +52,7 @@ namespace ASELCO_201_System
                 return true;
             }
             else
-            { 
+            {
                 return false;
             }
         }
@@ -71,6 +60,11 @@ namespace ASELCO_201_System
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void aselco201filesystem_Load(object sender, EventArgs e)
+        {
+            showname.Text = "Welcome " + Uname + " " + Lname;
         }
     }
 }

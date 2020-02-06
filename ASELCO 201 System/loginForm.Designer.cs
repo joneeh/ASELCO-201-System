@@ -53,7 +53,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "username:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
