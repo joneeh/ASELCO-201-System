@@ -1,6 +1,6 @@
 ﻿namespace ASELCO_201_System
 {
-    partial class loginForm
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,8 @@
             this.password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.labelMessage = new System.Windows.Forms.Label();
+            this.admin = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // username
@@ -49,9 +51,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(50, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "username:";
+            this.label1.Text = "Username:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
@@ -59,9 +61,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(52, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "password: ";
+            this.label2.Text = "Password: ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // password
@@ -92,11 +94,35 @@
             this.labelMessage.Size = new System.Drawing.Size(0, 13);
             this.labelMessage.TabIndex = 5;
             // 
-            // loginForm
+            // admin
             // 
+            this.admin.Location = new System.Drawing.Point(64, 328);
+            this.admin.Name = "admin";
+            this.admin.Size = new System.Drawing.Size(44, 23);
+            this.admin.TabIndex = 6;
+            this.admin.Text = "Admin";
+            this.admin.UseVisualStyleBackColor = true;
+            this.admin.Click += new System.EventHandler(this.admin_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 333);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Login as: ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // LoginForm
+            // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(326, 363);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.admin);
             this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -106,9 +132,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "loginForm";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ASELCO 201 FILE SYSTEM";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,6 +150,8 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelMessage;
+        private System.Windows.Forms.Button admin;
+        private System.Windows.Forms.Label label3;
     }
 }
 
