@@ -84,7 +84,7 @@ namespace ASELCO_201_System
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlCommand cmd = new SqlCommand("Select * from login where username=@uname AND password=@password AND department='corplan'", con);
+            SqlCommand cmd = new SqlCommand("Select * from login where username=@username AND password=@password", con);
             cmd.Parameters.AddWithValue("@username", username.Text);
             cmd.Parameters.AddWithValue("@password", password.Text);
             con.Open();
@@ -104,16 +104,19 @@ namespace ASELCO_201_System
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the required fields!";
+                username.Focus();
             }
             else if (String.IsNullOrEmpty(username.Text))
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the username field!";
+                username.Focus();
             }
             else if (String.IsNullOrEmpty(password.Text))
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the password field!";
+                password.Focus();
             }
 
             else if (count == 1)

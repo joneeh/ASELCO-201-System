@@ -40,6 +40,8 @@
             // 
             // username
             // 
+            this.username.AcceptsReturn = true;
+            this.username.AcceptsTab = true;
             this.username.Location = new System.Drawing.Point(112, 70);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(153, 20);
