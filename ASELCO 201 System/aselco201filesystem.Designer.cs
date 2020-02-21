@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.showname = new System.Windows.Forms.Label();
             this.search = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.showpos = new System.Windows.Forms.Label();
-            this.showname = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 82);
             this.panel1.TabIndex = 0;
+            // 
+            // showname
+            // 
+            this.showname.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.showname.AutoSize = true;
+            this.showname.BackColor = System.Drawing.Color.Transparent;
+            this.showname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showname.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.showname.Location = new System.Drawing.Point(773, 10);
+            this.showname.Margin = new System.Windows.Forms.Padding(0);
+            this.showname.MinimumSize = new System.Drawing.Size(200, 0);
+            this.showname.Name = "showname";
+            this.showname.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.showname.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.showname.Size = new System.Drawing.Size(200, 39);
+            this.showname.TabIndex = 0;
+            this.showname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // search
             // 
@@ -88,6 +105,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(979, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -107,23 +125,6 @@
             this.showpos.Size = new System.Drawing.Size(200, 24);
             this.showpos.TabIndex = 1;
             this.showpos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // showname
-            // 
-            this.showname.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.showname.AutoSize = true;
-            this.showname.BackColor = System.Drawing.Color.Transparent;
-            this.showname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showname.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.showname.Location = new System.Drawing.Point(773, 10);
-            this.showname.Margin = new System.Windows.Forms.Padding(0);
-            this.showname.MinimumSize = new System.Drawing.Size(200, 0);
-            this.showname.Name = "showname";
-            this.showname.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.showname.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.showname.Size = new System.Drawing.Size(200, 39);
-            this.showname.TabIndex = 0;
-            this.showname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Aselco201filesystem
             // 

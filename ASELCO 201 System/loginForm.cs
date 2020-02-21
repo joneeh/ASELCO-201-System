@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ASELCO_201_System
@@ -22,7 +23,7 @@ namespace ASELCO_201_System
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
-            String query = "SELECT fname, lname, position, department FROM login WHERE username = @username";
+            String query = "SELECT fname, lname, position, department, profilePicture FROM login WHERE username = @username";
             try
             {
                 con.Open();
@@ -121,10 +122,14 @@ namespace ASELCO_201_System
 
             else if (count == 1)
             {
+                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["profilePicture"]);
+
                 this.getTheName(username.Text);
                 MessageBox.Show("Welcome, " + UppercaseFirst(fname) + "!");
                 this.Hide();
                 Aselco201filesystem fm = new Aselco201filesystem();
+
+                fm.Image = new Bitmap(ms);
                 fm.Uname = fname.Trim();
                 fm.Lname = lname.Trim();
                 fm.Postn = position.Trim();

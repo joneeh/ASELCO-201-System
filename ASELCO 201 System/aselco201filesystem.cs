@@ -7,6 +7,14 @@ namespace ASELCO_201_System
     public partial class Aselco201filesystem : Form
     {
 
+        private Image image;
+
+        public Image Image
+        { 
+            get { return image; }
+            set { image = value; }
+        }
+
         private String uname;
         public String Uname
         {
@@ -91,6 +99,7 @@ namespace ASELCO_201_System
 
         private void aselco201filesystem_Load(object sender, EventArgs e)
         {
+            pictureBox1.Image = Image;
             showname.Text = UppercaseFirst(Uname) + " " + UppercaseFirst(Lname);
             showpos.Text = UppercaseFirst(Postn) + ", " + UppercaseFirst(Deptn);
         }

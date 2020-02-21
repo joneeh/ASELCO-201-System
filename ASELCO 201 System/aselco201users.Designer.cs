@@ -63,6 +63,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 250);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 85;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(693, 199);
             this.dataGridView1.TabIndex = 0;
@@ -79,9 +81,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 30);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 130);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -142,12 +145,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(48, 124);
+            this.button1.Location = new System.Drawing.Point(46, 136);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "Upload";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1
             // 
@@ -161,11 +165,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.textBox5);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.textBox4);
             this.tabPage1.Controls.Add(this.pictureBox1);

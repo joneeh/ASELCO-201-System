@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -9,44 +10,11 @@ namespace ASELCO_201_System
 {
     public partial class aselco201users : Form
     {
+        string imgLocation = "";
+
         public aselco201users()
         {
             InitializeComponent();
-        }
-
-        private void open()
-        {
-            try
-            {
-                OpenFileDialog ofd = new OpenFileDialog();
-                ofd.InitialDirectory = "C:/Pictures/";
-                ofd.Filter = "All Files|*.*|JPEG|*.jpg|Bitmaps|*.bmp|GIFs|*.gif|";
-                ofd.FilterIndex = 2;
-                if (ShowDialog() == DialogResult.OK)
-                {
-                    pictureBox1.Image = Image.FromFile(ofd.FileName);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void savePicture()
-        {
-            if (pictureBox1.Image != null)
-            {
-                MemoryStream ms = new MemoryStream();
-                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-                byte[] a = ms.GetBuffer();
-                ms.Close();
-                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
-                SqlCommand cmd = new SqlCommand("Select profilePicture as 'Profile Picture', fName as 'First Name', lName as 'Last Name', department as 'Department', position as 'Position', username as 'Username', password as 'Password' from login", con);
-
-
-            }
         }
 
         public static bool CloseCancel()
@@ -94,9 +62,14 @@ namespace ASELCO_201_System
 
         private void button2_Click(object sender, EventArgs e)
         {
+            byte[] images = null;
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(stream);
+            images = brs.ReadBytes((int)stream.Length);
+
             SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf; Integrated Security = True; Connect Timeout = 30");
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into login(username, password, profilePicture, fName, lName, position, department) values(@username, @password, null, @fName, @lName, @position, @department)", con);
+            SqlCommand cmd = new SqlCommand("insert into login(username, password, profilePicture, fName, lName, position, department) values(@username, @password, @images, @fName, @lName, @position, @department)", con);
 
             cmd.Parameters.AddWithValue("@username", textBox1.Text.Trim() + "." + textBox2.Text.Trim());
             cmd.Parameters.AddWithValue("@password", textBox5.Text.Trim());
@@ -104,10 +77,10 @@ namespace ASELCO_201_System
             cmd.Parameters.AddWithValue("@lName", textBox2.Text.Trim());
             cmd.Parameters.AddWithValue("@position", textBox3.Text.Trim());
             cmd.Parameters.AddWithValue("@department", textBox4.Text.Trim());
+            cmd.Parameters.AddWithValue("@images", images);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Added User Successfully!");
             clear();
-
 
             SqlConnection con1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
             SqlCommand cmd1 = new SqlCommand("Select profilePicture as 'Profile Picture', fName as 'First Name', lName as 'Last Name', department as 'Department', position as 'Position', username as 'Username', password as 'Password' from login", con1);
@@ -120,6 +93,18 @@ namespace ASELCO_201_System
         void clear()
         {
             textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog diaglog = new OpenFileDialog();
+            diaglog.Filter = "image files|*.jpg;*.png;*.gif;*.icon;.*;";
+            if (diaglog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = diaglog.FileName.ToString();
+                pictureBox1.ImageLocation = imgLocation;
+            }
+
         }
     }
 }
