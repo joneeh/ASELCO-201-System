@@ -43,9 +43,16 @@ namespace ASELCO_201_System
             set { department = value; }
         }
 
+        public void hidePanels()
+        {
+            searchemployee.Visible = false;
+            addemployee.Visible = false;
+        }
+
         public Aselco201filesystem()
         {
             InitializeComponent();
+            Load += new EventHandler(aselco201filesystem_Load);
         }
 
         private void Aselco201filesystem_FormClosing(object sender, FormClosingEventArgs e)
@@ -102,6 +109,7 @@ namespace ASELCO_201_System
             pictureBox1.Image = Image;
             showname.Text = UppercaseFirst(Uname) + " " + UppercaseFirst(Lname);
             showpos.Text = UppercaseFirst(Postn) + ", " + UppercaseFirst(Deptn);
+            hidePanels();
         }
 
         private void search_Click(object sender, EventArgs e)
@@ -125,6 +133,34 @@ namespace ASELCO_201_System
 
             search.ForeColor = Color.Silver;
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logoutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            searchemployee.Visible = true;
         }
     }
 }

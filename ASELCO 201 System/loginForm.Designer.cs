@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,6 +37,10 @@
             this.labelMessage = new System.Windows.Forms.Label();
             this.admin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // username
@@ -116,6 +121,32 @@
             this.label3.Text = "Login as: ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(94, 155);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Location = new System.Drawing.Point(-1, 35);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(131, 10);
+            this.panel2.TabIndex = 20;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel1.Location = new System.Drawing.Point(-1, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 13);
+            this.panel1.TabIndex = 19;
+            // 
             // LoginForm
             // 
             this.AllowDrop = true;
@@ -123,6 +154,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(326, 363);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.admin);
             this.Controls.Add(this.labelMessage);
@@ -131,6 +164,7 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.username);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -139,6 +173,7 @@
             this.Text = "ASELCO 201 FILE SYSTEM";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +189,9 @@
         private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.Button admin;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
