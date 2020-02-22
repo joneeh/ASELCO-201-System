@@ -34,6 +34,7 @@
             this.updateProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -85,7 +85,6 @@
             this.tabPage18 = new System.Windows.Forms.TabPage();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.searchemployee = new System.Windows.Forms.Panel();
-            this.addemployee = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -131,13 +130,13 @@
             // updateProfileToolStripMenuItem
             // 
             this.updateProfileToolStripMenuItem.Name = "updateProfileToolStripMenuItem";
-            this.updateProfileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateProfileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.updateProfileToolStripMenuItem.Text = "Update Profile";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click_1);
             // 
@@ -152,16 +151,23 @@
             this.addToolStripMenuItem.Text = "Manage 201 File";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.searchToolStripMenuItem.Text = "Search Employee";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            // 
             // addToolStripMenuItem1
             // 
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
             this.addToolStripMenuItem1.Text = "Add Employee";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.updateToolStripMenuItem.Text = "Update Employee";
             // 
             // listToolStripMenuItem
@@ -176,13 +182,13 @@
             // employeeClassToolStripMenuItem
             // 
             this.employeeClassToolStripMenuItem.Name = "employeeClassToolStripMenuItem";
-            this.employeeClassToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.employeeClassToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.employeeClassToolStripMenuItem.Text = "Employee Class";
             // 
             // statusesToolStripMenuItem
             // 
             this.statusesToolStripMenuItem.Name = "statusesToolStripMenuItem";
-            this.statusesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.statusesToolStripMenuItem.Text = "Statuses";
             // 
             // label1
@@ -231,7 +237,7 @@
             this.search.Location = new System.Drawing.Point(367, 24);
             this.search.MinimumSize = new System.Drawing.Size(350, 40);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(350, 40);
+            this.search.Size = new System.Drawing.Size(350, 30);
             this.search.TabIndex = 3;
             this.search.Text = "Search";
             this.search.Enter += new System.EventHandler(this.search_Enter);
@@ -303,13 +309,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 82);
             this.panel1.TabIndex = 0;
-            // 
-            // searchToolStripMenuItem
-            // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.searchToolStripMenuItem.Text = "Search Employee";
-            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // pictureBox5
             // 
@@ -682,13 +681,6 @@
             this.searchemployee.Size = new System.Drawing.Size(1092, 461);
             this.searchemployee.TabIndex = 17;
             // 
-            // addemployee
-            // 
-            this.addemployee.Location = new System.Drawing.Point(0, 110);
-            this.addemployee.Name = "addemployee";
-            this.addemployee.Size = new System.Drawing.Size(1092, 454);
-            this.addemployee.TabIndex = 17;
-            // 
             // Aselco201filesystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -696,7 +688,6 @@
             this.ClientSize = new System.Drawing.Size(1080, 558);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.addemployee);
             this.Controls.Add(this.searchemployee);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -788,6 +779,5 @@
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.Panel searchemployee;
-        private System.Windows.Forms.Panel addemployee;
     }
 }
