@@ -14,15 +14,17 @@ namespace ASELCO_201_System
             InitializeComponent();
         }
 
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        private String constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
         private String fname;
         private String lname;
         private String position;
         private String department;
 
-        private void getTheName(String username)
+        private void getTheName(string username)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
+            con.ConnectionString = constring;
             String query = "SELECT fname, lname, position, department, profilePicture FROM login WHERE username = @username";
             try
             {
@@ -84,7 +86,6 @@ namespace ASELCO_201_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
             SqlCommand cmd = new SqlCommand("Select * from login where username=@username AND password=@password", con);
             cmd.Parameters.AddWithValue("@username", username.Text);
             cmd.Parameters.AddWithValue("@password", password.Text);

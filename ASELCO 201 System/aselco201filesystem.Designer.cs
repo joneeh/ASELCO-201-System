@@ -61,30 +61,32 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage26 = new System.Windows.Forms.TabPage();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.tabPage25 = new System.Windows.Forms.TabPage();
-            this.tabPage24 = new System.Windows.Forms.TabPage();
-            this.tabPage23 = new System.Windows.Forms.TabPage();
-            this.tabPage22 = new System.Windows.Forms.TabPage();
-            this.tabPage21 = new System.Windows.Forms.TabPage();
-            this.tabPage20 = new System.Windows.Forms.TabPage();
-            this.tabPage19 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage18 = new System.Windows.Forms.TabPage();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage19 = new System.Windows.Forms.TabPage();
+            this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.tabPage21 = new System.Windows.Forms.TabPage();
+            this.tabPage22 = new System.Windows.Forms.TabPage();
+            this.tabPage23 = new System.Windows.Forms.TabPage();
+            this.tabPage24 = new System.Windows.Forms.TabPage();
+            this.tabPage25 = new System.Windows.Forms.TabPage();
+            this.tabPage26 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.searchemployee = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -93,12 +95,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabPage26.SuspendLayout();
-            this.tabControl4.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabControl3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage26.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.searchemployee.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -438,118 +440,56 @@
             this.tabControl1.Size = new System.Drawing.Size(1089, 181);
             this.tabControl1.TabIndex = 16;
             // 
-            // tabPage26
+            // tabPage1
             // 
-            this.tabPage26.Controls.Add(this.tabControl4);
-            this.tabPage26.Location = new System.Drawing.Point(4, 22);
-            this.tabPage26.Name = "tabPage26";
-            this.tabPage26.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage26.TabIndex = 10;
-            this.tabPage26.Text = "Merits/Demerits";
-            this.tabPage26.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.tabControl2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Certificates";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabControl4
+            // tabControl2
             // 
-            this.tabControl4.Controls.Add(this.tabPage9);
-            this.tabControl4.Controls.Add(this.tabPage10);
-            this.tabControl4.Location = new System.Drawing.Point(-3, 0);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(1084, 169);
-            this.tabControl4.TabIndex = 0;
+            this.tabControl2.Controls.Add(this.tabPage17);
+            this.tabControl2.Controls.Add(this.tabPage18);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Location = new System.Drawing.Point(-4, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1085, 166);
+            this.tabControl2.TabIndex = 0;
             // 
-            // tabPage10
+            // tabPage17
             // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 22);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1076, 143);
-            this.tabPage10.TabIndex = 1;
-            this.tabPage10.Text = "Demerits";
-            this.tabPage10.UseVisualStyleBackColor = true;
+            this.tabPage17.Location = new System.Drawing.Point(4, 22);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(1077, 140);
+            this.tabPage17.TabIndex = 0;
+            this.tabPage17.Text = "Birth Certificate";
+            this.tabPage17.UseVisualStyleBackColor = true;
             // 
-            // tabPage9
+            // tabPage18
             // 
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1076, 143);
-            this.tabPage9.TabIndex = 0;
-            this.tabPage9.Text = "Merits";
-            this.tabPage9.UseVisualStyleBackColor = true;
+            this.tabPage18.Location = new System.Drawing.Point(4, 22);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(1077, 140);
+            this.tabPage18.TabIndex = 1;
+            this.tabPage18.Text = "Marriage Certificate";
+            this.tabPage18.UseVisualStyleBackColor = true;
             // 
-            // tabPage25
+            // tabPage4
             // 
-            this.tabPage25.Location = new System.Drawing.Point(4, 22);
-            this.tabPage25.Name = "tabPage25";
-            this.tabPage25.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage25.TabIndex = 9;
-            this.tabPage25.Text = "Service Records";
-            this.tabPage25.UseVisualStyleBackColor = true;
-            // 
-            // tabPage24
-            // 
-            this.tabPage24.Location = new System.Drawing.Point(4, 22);
-            this.tabPage24.Name = "tabPage24";
-            this.tabPage24.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage24.TabIndex = 8;
-            this.tabPage24.Text = "Performance Evaluation";
-            this.tabPage24.UseVisualStyleBackColor = true;
-            // 
-            // tabPage23
-            // 
-            this.tabPage23.Location = new System.Drawing.Point(4, 22);
-            this.tabPage23.Name = "tabPage23";
-            this.tabPage23.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage23.TabIndex = 7;
-            this.tabPage23.Text = "Contracts";
-            this.tabPage23.UseVisualStyleBackColor = true;
-            // 
-            // tabPage22
-            // 
-            this.tabPage22.Location = new System.Drawing.Point(4, 22);
-            this.tabPage22.Name = "tabPage22";
-            this.tabPage22.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage22.TabIndex = 6;
-            this.tabPage22.Text = "Notices";
-            this.tabPage22.UseVisualStyleBackColor = true;
-            // 
-            // tabPage21
-            // 
-            this.tabPage21.Location = new System.Drawing.Point(4, 22);
-            this.tabPage21.Name = "tabPage21";
-            this.tabPage21.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage21.TabIndex = 5;
-            this.tabPage21.Text = "TOR";
-            this.tabPage21.UseVisualStyleBackColor = true;
-            // 
-            // tabPage20
-            // 
-            this.tabPage20.Location = new System.Drawing.Point(4, 22);
-            this.tabPage20.Name = "tabPage20";
-            this.tabPage20.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage20.TabIndex = 4;
-            this.tabPage20.Text = "Drug Test Report";
-            this.tabPage20.UseVisualStyleBackColor = true;
-            // 
-            // tabPage19
-            // 
-            this.tabPage19.Location = new System.Drawing.Point(4, 22);
-            this.tabPage19.Name = "tabPage19";
-            this.tabPage19.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage19.TabIndex = 3;
-            this.tabPage19.Text = "Neuro/Psycho Examinatio Result";
-            this.tabPage19.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Diploma";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1077, 140);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "Medical Certificate";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -574,23 +514,15 @@
             this.tabControl3.Size = new System.Drawing.Size(1085, 171);
             this.tabControl3.TabIndex = 0;
             // 
-            // tabPage8
+            // tabPage5
             // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1077, 145);
-            this.tabPage8.TabIndex = 3;
-            this.tabPage8.Text = "Judge Clearance";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1077, 145);
-            this.tabPage7.TabIndex = 2;
-            this.tabPage7.Text = "Mayors Clearance";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1077, 145);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "Barangay Clearance";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
@@ -602,69 +534,141 @@
             this.tabPage6.Text = "Police Clearance";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
+            // tabPage7
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1077, 145);
-            this.tabPage5.TabIndex = 0;
-            this.tabPage5.Text = "Barangay Clearance";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1077, 145);
+            this.tabPage7.TabIndex = 2;
+            this.tabPage7.Text = "Mayors Clearance";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
+            // tabPage8
             // 
-            this.tabPage1.Controls.Add(this.tabControl2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1081, 155);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Certificates";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1077, 145);
+            this.tabPage8.TabIndex = 3;
+            this.tabPage8.Text = "Judge Clearance";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // tabPage3
             // 
-            this.tabControl2.Controls.Add(this.tabPage17);
-            this.tabControl2.Controls.Add(this.tabPage18);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Location = new System.Drawing.Point(-4, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1085, 166);
-            this.tabControl2.TabIndex = 0;
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Diploma";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // tabPage19
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage4.TabIndex = 2;
-            this.tabPage4.Text = "Medical Certificate";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage19.Location = new System.Drawing.Point(4, 22);
+            this.tabPage19.Name = "tabPage19";
+            this.tabPage19.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage19.TabIndex = 3;
+            this.tabPage19.Text = "Neuro/Psycho Examinatio Result";
+            this.tabPage19.UseVisualStyleBackColor = true;
             // 
-            // tabPage18
+            // tabPage20
             // 
-            this.tabPage18.Location = new System.Drawing.Point(4, 22);
-            this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage18.TabIndex = 1;
-            this.tabPage18.Text = "Marriage Certificate";
-            this.tabPage18.UseVisualStyleBackColor = true;
+            this.tabPage20.Location = new System.Drawing.Point(4, 22);
+            this.tabPage20.Name = "tabPage20";
+            this.tabPage20.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage20.TabIndex = 4;
+            this.tabPage20.Text = "Drug Test Report";
+            this.tabPage20.UseVisualStyleBackColor = true;
             // 
-            // tabPage17
+            // tabPage21
             // 
-            this.tabPage17.Location = new System.Drawing.Point(4, 22);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage17.TabIndex = 0;
-            this.tabPage17.Text = "Birth Certificate";
-            this.tabPage17.UseVisualStyleBackColor = true;
+            this.tabPage21.Location = new System.Drawing.Point(4, 22);
+            this.tabPage21.Name = "tabPage21";
+            this.tabPage21.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage21.TabIndex = 5;
+            this.tabPage21.Text = "TOR";
+            this.tabPage21.UseVisualStyleBackColor = true;
+            // 
+            // tabPage22
+            // 
+            this.tabPage22.Location = new System.Drawing.Point(4, 22);
+            this.tabPage22.Name = "tabPage22";
+            this.tabPage22.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage22.TabIndex = 6;
+            this.tabPage22.Text = "Notices";
+            this.tabPage22.UseVisualStyleBackColor = true;
+            // 
+            // tabPage23
+            // 
+            this.tabPage23.Location = new System.Drawing.Point(4, 22);
+            this.tabPage23.Name = "tabPage23";
+            this.tabPage23.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage23.TabIndex = 7;
+            this.tabPage23.Text = "Contracts";
+            this.tabPage23.UseVisualStyleBackColor = true;
+            // 
+            // tabPage24
+            // 
+            this.tabPage24.Location = new System.Drawing.Point(4, 22);
+            this.tabPage24.Name = "tabPage24";
+            this.tabPage24.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage24.TabIndex = 8;
+            this.tabPage24.Text = "Performance Evaluation";
+            this.tabPage24.UseVisualStyleBackColor = true;
+            // 
+            // tabPage25
+            // 
+            this.tabPage25.Location = new System.Drawing.Point(4, 22);
+            this.tabPage25.Name = "tabPage25";
+            this.tabPage25.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage25.TabIndex = 9;
+            this.tabPage25.Text = "Service Records";
+            this.tabPage25.UseVisualStyleBackColor = true;
+            // 
+            // tabPage26
+            // 
+            this.tabPage26.Controls.Add(this.tabControl4);
+            this.tabPage26.Location = new System.Drawing.Point(4, 22);
+            this.tabPage26.Name = "tabPage26";
+            this.tabPage26.Size = new System.Drawing.Size(1081, 155);
+            this.tabPage26.TabIndex = 10;
+            this.tabPage26.Text = "Merits/Demerits";
+            this.tabPage26.UseVisualStyleBackColor = true;
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabPage9);
+            this.tabControl4.Controls.Add(this.tabPage10);
+            this.tabControl4.Location = new System.Drawing.Point(-3, 0);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(1084, 169);
+            this.tabControl4.TabIndex = 0;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(1076, 143);
+            this.tabPage9.TabIndex = 0;
+            this.tabPage9.Text = "Merits";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1076, 143);
+            this.tabPage10.TabIndex = 1;
+            this.tabPage10.Text = "Demerits";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // searchemployee
             // 
+            this.searchemployee.Controls.Add(this.label13);
+            this.searchemployee.Controls.Add(this.label12);
             this.searchemployee.Controls.Add(this.tabControl1);
             this.searchemployee.Controls.Add(this.pictureBox3);
             this.searchemployee.Controls.Add(this.label11);
@@ -680,6 +684,26 @@
             this.searchemployee.Name = "searchemployee";
             this.searchemployee.Size = new System.Drawing.Size(1092, 461);
             this.searchemployee.TabIndex = 17;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(281, 216);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 20);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Employee Class:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(607, 216);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(134, 20);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Employee Status:";
             // 
             // Aselco201filesystem
             // 
@@ -709,12 +733,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage26.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage26.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.searchemployee.ResumeLayout(false);
             this.searchemployee.PerformLayout();
             this.ResumeLayout(false);
@@ -779,5 +803,7 @@
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.Panel searchemployee;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
