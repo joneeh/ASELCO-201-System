@@ -48,10 +48,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -70,21 +73,33 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profilePicture,
             this.fName,
@@ -93,13 +108,17 @@
             this.department,
             this.username,
             this.password});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 250);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 266);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(693, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(696, 183);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // profilePicture
             // 
@@ -111,6 +130,7 @@
             this.profilePicture.Image = global::ASELCO_201_System.Properties.Resources.logo;
             this.profilePicture.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.profilePicture.Name = "profilePicture";
+            this.profilePicture.ReadOnly = true;
             this.profilePicture.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.profilePicture.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.profilePicture.Width = 40;
@@ -121,6 +141,7 @@
             this.fName.FillWeight = 31.58102F;
             this.fName.HeaderText = "First Name";
             this.fName.Name = "fName";
+            this.fName.ReadOnly = true;
             // 
             // lName
             // 
@@ -128,6 +149,7 @@
             this.lName.FillWeight = 31.58102F;
             this.lName.HeaderText = "Last Name";
             this.lName.Name = "lName";
+            this.lName.ReadOnly = true;
             // 
             // position
             // 
@@ -135,6 +157,7 @@
             this.position.FillWeight = 31.58102F;
             this.position.HeaderText = "Position";
             this.position.Name = "position";
+            this.position.ReadOnly = true;
             // 
             // department
             // 
@@ -142,6 +165,7 @@
             this.department.FillWeight = 31.58102F;
             this.department.HeaderText = "Department";
             this.department.Name = "department";
+            this.department.ReadOnly = true;
             // 
             // username
             // 
@@ -149,6 +173,7 @@
             this.username.FillWeight = 31.58102F;
             this.username.HeaderText = "Username";
             this.username.Name = "username";
+            this.username.ReadOnly = true;
             // 
             // password
             // 
@@ -156,6 +181,7 @@
             this.password.FillWeight = 31.58102F;
             this.password.HeaderText = "Password";
             this.password.Name = "password";
+            this.password.ReadOnly = true;
             // 
             // label2
             // 
@@ -253,6 +279,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel4);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.textBox5);
@@ -273,6 +300,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add User";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel4.Location = new System.Drawing.Point(55, -3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(640, 13);
+            this.panel4.TabIndex = 33;
             // 
             // button2
             // 
@@ -302,6 +337,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.textBox11);
             this.tabPage2.Controls.Add(this.button3);
@@ -325,6 +362,28 @@
             this.tabPage2.Text = "Edit User";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel3.Location = new System.Drawing.Point(110, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(582, 10);
+            this.panel3.TabIndex = 32;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Red;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Snow;
+            this.button5.Location = new System.Drawing.Point(665, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(20, 20);
+            this.button5.TabIndex = 30;
+            this.button5.Text = "X";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -347,9 +406,10 @@
             this.button3.Location = new System.Drawing.Point(46, 136);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 24;
+            this.button3.TabIndex = 26;
             this.button3.Text = "Upload";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -359,13 +419,14 @@
             this.button4.TabIndex = 27;
             this.button4.Text = "Update User";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(232, 136);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(120, 20);
-            this.textBox6.TabIndex = 26;
+            this.textBox6.TabIndex = 24;
             // 
             // label9
             // 
@@ -481,6 +542,74 @@
             this.label8.Text = "_________________________________________________________________________________" +
     "______________";
             // 
+            // label15
+            // 
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(63, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 19);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "First Name";
+            // 
+            // label16
+            // 
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(173, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 19);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Last Name";
+            // 
+            // label17
+            // 
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(281, 3);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 19);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "Department";
+            // 
+            // label18
+            // 
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(398, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(75, 19);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Position";
+            // 
+            // label19
+            // 
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(497, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 19);
+            this.label19.TabIndex = 21;
+            this.label19.Text = "Userrname";
+            // 
+            // label20
+            // 
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(604, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(75, 19);
+            this.label20.TabIndex = 22;
+            this.label20.Text = "Password";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Location = new System.Drawing.Point(12, 244);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(696, 19);
+            this.panel1.TabIndex = 23;
+            // 
             // aselco201users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,6 +620,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "aselco201users";
@@ -506,6 +636,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,5 +686,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn department;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

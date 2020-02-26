@@ -54,11 +54,10 @@ namespace ASELCO_201_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            con.Open();
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
             SqlCommand cmd = new SqlCommand("Select * from adminlogin where username=@username AND password=@password", con);            
             cmd.Parameters.AddWithValue("@username", username.Text);
             cmd.Parameters.AddWithValue("@password", password.Text);
-            con.Close();
             con.Open();
             SqlDataAdapter adapt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();

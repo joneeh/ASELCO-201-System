@@ -86,6 +86,7 @@ namespace ASELCO_201_System
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
             SqlCommand cmd = new SqlCommand("Select * from login where username=@username AND password=@password", con);
             cmd.Parameters.AddWithValue("@username", username.Text);
             cmd.Parameters.AddWithValue("@password", password.Text);
