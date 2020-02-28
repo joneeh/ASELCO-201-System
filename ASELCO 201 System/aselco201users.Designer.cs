@@ -70,6 +70,11 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.change = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datechanged = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -80,13 +85,17 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -271,8 +280,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(697, 198);
             this.tabControl1.TabIndex = 12;
@@ -337,6 +349,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBox3);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.label14);
@@ -372,7 +385,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Red;
+            this.button5.BackColor = System.Drawing.Color.LightCoral;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Snow;
@@ -407,7 +420,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 26;
-            this.button3.Text = "Upload";
+            this.button3.Text = "Change";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -511,6 +524,63 @@
             this.textBox10.Size = new System.Drawing.Size(120, 20);
             this.textBox10.TabIndex = 20;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel2);
+            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPage3.Size = new System.Drawing.Size(689, 172);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Logs";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel2.Location = new System.Drawing.Point(152, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(582, 10);
+            this.panel2.TabIndex = 33;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToOrderColumns = true;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.change,
+            this.datechanged});
+            this.dataGridView2.Location = new System.Drawing.Point(6, 17);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(677, 149);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // change
+            // 
+            this.change.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.change.DataPropertyName = "change";
+            this.change.HeaderText = "Changes";
+            this.change.Name = "change";
+            this.change.ReadOnly = true;
+            // 
+            // datechanged
+            // 
+            this.datechanged.DataPropertyName = "datechanged";
+            this.datechanged.HeaderText = "Date Changed";
+            this.datechanged.Name = "datechanged";
+            this.datechanged.ReadOnly = true;
+            this.datechanged.Width = 200;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -535,12 +605,12 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Green;
-            this.label8.Location = new System.Drawing.Point(131, 9);
+            this.label8.Location = new System.Drawing.Point(171, 10);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(577, 13);
+            this.label8.Size = new System.Drawing.Size(535, 13);
             this.label8.TabIndex = 17;
             this.label8.Text = "_________________________________________________________________________________" +
-    "______________";
+    "_______";
             // 
             // label15
             // 
@@ -610,6 +680,16 @@
             this.panel1.Size = new System.Drawing.Size(696, 19);
             this.panel1.TabIndex = 23;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(34, 30);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 33;
+            this.pictureBox3.TabStop = false;
+            // 
             // aselco201users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,7 +716,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -696,5 +779,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn change;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datechanged;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
