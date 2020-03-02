@@ -324,5 +324,25 @@ namespace ASELCO_201_System
         {
             dataGridView2.CurrentRow.Selected = true;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            const string message = "Are you sure you want to logout?";
+            const string caption = "Logging out";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                adminLoginForm login = new adminLoginForm();
+                login.Show();
+                this.Hide();
+            }
+            else
+            {
+                this.DialogResult = DialogResult.No;
+            }
+        }
     }
 }
