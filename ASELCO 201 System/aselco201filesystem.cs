@@ -116,11 +116,11 @@ namespace ASELCO_201_System
             {
                 label42.Text = "Good Morning! " + UppercaseFirst(Uname) + " " + UppercaseFirst(Lname) + ".";
             }
-            else if (date.Hour <= 11 && date.Hour < 14)
+            else if (date.Hour >= 11 && date.Hour < 14)
             {
                 label42.Text = "Good Noon! " + UppercaseFirst(Uname) + " " + UppercaseFirst(Lname) + ".";
             }
-            else if (date.Hour < 15 && date.Hour < 18)
+            else if (date.Hour >= 14 && date.Hour < 18)
             {
                 label42.Text = "Good Afternon! " + UppercaseFirst(Uname) + " " + UppercaseFirst(Lname) + ".";
             }
@@ -268,7 +268,7 @@ namespace ASELCO_201_System
             MessageBox.Show("Added User Successfully!");
 
             SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
-            cmd5.Parameters.AddWithValue("@user", "User " + textBox1.Text.Trim() + " " + textBox2.Text.Trim() + " has been added by the administrator.");
+            cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added by " + Uname + " " + Lname + " to the database.");
             cmd5.ExecuteNonQuery();
 
             con.Close();
