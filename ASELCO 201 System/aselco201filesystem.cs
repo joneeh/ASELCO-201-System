@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,11 +11,26 @@ namespace ASELCO_201_System
     {
         string imgLocation = "";
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
-        
+        private String constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
+
+        private String fnamedisp;
+        private String lnamedisp;
+        private String mname;
+        private String birthDate;
+        private String birthplace;
+        private String educattainment;
+        private String datehired;
+        private String sssno;
+        private String hdmfno;
+        private String tin;
+        private String philhealth;
+        private String employeeclass;
+        private String employeestatus;
+
         private Image image;
 
         public Image Image
-        { 
+        {
             get { return image; }
             set { image = value; }
         }
@@ -105,12 +119,23 @@ namespace ASELCO_201_System
 
         private void aselco201filesystem_Load(object sender, EventArgs e)
         {
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("Select fname, lname, mname from employeeRec", con);
+            DataTable dttbl = new DataTable();
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            adapt.Fill(dttbl);
+            dataGridView1.DataSource = dttbl;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.MultiSelect = false;
+
+            con.Close();
             StartTimer();
 
             pictureBox1.Image = Image;
             showname.Text = UppercaseFirst(Uname) + " " + UppercaseFirst(Lname);
             showpos.Text = UppercaseFirst(Postn) + ", " + UppercaseFirst(Deptn);
-            
+
             var date = DateTime.Now;
             if (date.Hour < 11)
             {
@@ -133,8 +158,8 @@ namespace ASELCO_201_System
             addemployee.Visible = false;
 
             pictureBox5.Visible = false;
-            search.Visible = false;
-            label1.Visible = false;
+            searchtextbox.Visible = false;
+            dataGridView1.Visible = false;            
         }
 
 
@@ -155,26 +180,23 @@ namespace ASELCO_201_System
             label44.Text = DateTime.Now.ToString("D");
         }
 
-        private void search_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void search_Enter(object sender, EventArgs e)
         {
-            if (search.Text == "Search") {
-                search.Text = "";
+            if (searchtextbox.Text == "Search")
+            {
+                searchtextbox.Text = "";
             };
 
-            search.ForeColor = Color.Black;
+            searchtextbox.ForeColor = Color.Black;
         }
 
         private void search_Leave(object sender, EventArgs e)
         {
-            if (search.Text == "") {
-                search.Text = "Search";
+            if (searchtextbox.Text == "")
+            {
+                searchtextbox.Text = "Search";
 
-            search.ForeColor = Color.Silver;
+                searchtextbox.ForeColor = Color.Silver;
             }
         }
 
@@ -214,8 +236,8 @@ namespace ASELCO_201_System
             addemployee.Visible = false;
             home.Visible = false;
             pictureBox5.Visible = true;
-            search.Visible = true;
-            label1.Visible = true;
+            searchtextbox.Visible = true;
+            dataGridView1.Visible = false;
         }
 
         private void addToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -224,8 +246,8 @@ namespace ASELCO_201_System
             addemployee.Visible = true;
             home.Visible = false;
             pictureBox5.Visible = false;
-            search.Visible = false;
-            label1.Visible = false;
+            searchtextbox.Visible = false;
+            dataGridView1.Visible = false;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -234,8 +256,8 @@ namespace ASELCO_201_System
             addemployee.Visible = false;
             home.Visible = true;
             pictureBox5.Visible = false;
-            search.Visible = false;
-            label1.Visible = false;
+            searchtextbox.Visible = false;
+            dataGridView1.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -245,13 +267,15 @@ namespace ASELCO_201_System
             FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
             BinaryReader brs = new BinaryReader(stream);
             images = brs.ReadBytes((int)stream.Length);
-            SqlCommand cmd = new SqlCommand("insert into employeeRec(fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth," +
+            SqlCommand cmd = new SqlCommand("insert into employeeRec(fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
                 "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
-                "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid)" +
-                " values(@fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth," +
+                "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic)" +
+                " values(@fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
                 "null, null, null, null, null, null, null, null, null, null, null, " +
-                "null, null, null, null, null)", con);
+                "null, null, null, null, null, @dateadded, null, @profilepic)", con);
 
+
+            var date = DateTime.Now;
             cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
             cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
             cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim());
@@ -259,19 +283,32 @@ namespace ASELCO_201_System
             cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
             cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
             cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
-            cmd.Parameters.AddWithValue("@sssno", textBox9.Text.Trim());
-            cmd.Parameters.AddWithValue("@hdmfno", textBox8.Text.Trim());
-            cmd.Parameters.AddWithValue("@tin", textBox7.Text.Trim());
-            cmd.Parameters.AddWithValue("@philhealth", textBox11.Text.Trim());
-            cmd.Parameters.AddWithValue("@images", images);
+            cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
+            cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
+            cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
+            cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
+            cmd.Parameters.AddWithValue("@employeeclass", comboBox1.Text.Trim());
+            cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
+            cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+            cmd.Parameters.AddWithValue("@profilepic", images);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Added User Successfully!");
 
             SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
-            cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added by " + Uname + " " + Lname + " to the database.");
+            cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
             cmd5.ExecuteNonQuery();
 
             con.Close();
+            clear();
+        }
+
+        void clear()
+        {
+            textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = maskedTextBox1.Text = maskedTextBox2.Text = maskedTextBox3.Text = maskedTextBox4.Text = "";
+            dateTimePicker1 = dateTimePicker2 = null;
+            comboBox1.Text = comboBox2.Text = "";
+            pictureBox6.Image = null;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -283,6 +320,123 @@ namespace ASELCO_201_System
                 imgLocation = diaglog.FileName.ToString();
                 pictureBox6.ImageLocation = imgLocation;
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = constring;
+                String query = "SELECT fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, profilepic FROM employeerec WHERE fname = @fname and lname = @lname";
+                
+                label14.Text = fnamedisp +" "+ mname +". " + lnamedisp;
+                label1.Text = birthDate;
+                label47.Text = birthplace;
+                label49.Text = educattainment;
+                label48.Text = datehired;
+                label53.Text = sssno;
+                label52.Text = hdmfno;
+                label51.Text = tin;
+                label50.Text = philhealth;
+                label54.Text = employeeclass;
+                label55.Text = employeestatus;
+                pictureBox3.Image = Image;
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@fname", selectedRow.Cells[0].FormattedValue.ToString());
+                cmd.Parameters.AddWithValue("@lname", selectedRow.Cells[1].FormattedValue.ToString());
+                cmd.ExecuteScalar();
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                int count = ds.Tables[0].Rows.Count;
+                if (rdr.Read())
+                {
+
+                    MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["profilepic"]);
+                    Image = new Bitmap(ms);
+                    fnamedisp = rdr["fname"].ToString();
+                    lnamedisp = rdr["lname"].ToString();
+                    mname = rdr["mname"].ToString();
+                    birthDate = rdr.GetDateTime(3).ToString(@"dd/MM/yyyy");
+                    birthplace = rdr["birthplace"].ToString();
+                    educattainment = rdr["educattainment"].ToString();
+                    datehired = rdr.GetDateTime(6).ToString(@"dd/MM/yyyy");
+                    sssno = rdr["sssno"].ToString();
+                    hdmfno = rdr["hdmfno"].ToString();
+                    tin = rdr["tin"].ToString();
+                    philhealth = rdr["philhealth"].ToString();
+                    employeeclass = rdr["employeeclass"].ToString();
+                    employeestatus = rdr["employeestatus"].ToString();
+                }
+                con.Close();
+                dataGridView1.CurrentRow.Selected = true;
+            }
+        }
+
+        private void search_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = true;
+        }
+
+        private void searchBox(String search)
+        {
+            con.Open();
+            string query = "select * from employeerec where (fname+lname) like '%" + searchtextbox.Text + "%'";
+            SqlDataAdapter adapt = new SqlDataAdapter(query, con);
+            DataTable dttbl3 = new DataTable();
+            adapt.Fill(dttbl3);
+            dataGridView1.DataSource = dttbl3;
+            con.Close();
+        }
+
+        private void searchtextbox_TextChanged(object sender, EventArgs e)
+        {
+            searchBox(searchtextbox.Text);
+
+            dataGridView1.Visible = true;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar) || char.IsNumber(e.KeyChar))
+            {                          
+                return;
+            }
+            e.Handled = true;
         }
     }
 }

@@ -26,28 +26,20 @@ namespace ASELCO_201_System
             SqlConnection con = new SqlConnection();
             con.ConnectionString = constring;
             String query = "SELECT fname, lname, position, department, profilePicture FROM login WHERE username = @username";
-            try
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.ExecuteScalar();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.ExecuteScalar();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    fname = rdr["fname"].ToString();
-                    lname = rdr["lname"].ToString();
-                    position = rdr["position"].ToString();
-                    department = rdr["department"].ToString();
-                }
+                fname = rdr["fname"].ToString();
+                lname = rdr["lname"].ToString();
+                position = rdr["position"].ToString();
+                department = rdr["department"].ToString();
             }
-            catch (Exception)
-            {
-            }
-            finally
-            {
-                con.Close();
-            }
+            con.Close();
         }
         public static bool CloseCancel()
         {
