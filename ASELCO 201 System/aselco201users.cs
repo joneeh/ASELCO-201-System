@@ -45,6 +45,8 @@ namespace ASELCO_201_System
 
         private void aselco201users_Load(object sender, EventArgs e)
         {
+            button5.Visible = false;
+
             con.Open();
             SqlCommand cmd = new SqlCommand("Select username, password, profilePicture, fName, lName, position, department from login", con);
             DataTable dttbl = new DataTable();
@@ -77,43 +79,87 @@ namespace ASELCO_201_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            con.Open();
-            byte[] images = null;
-            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader brs = new BinaryReader(stream);
-            images = brs.ReadBytes((int)stream.Length);
-            SqlCommand cmd = new SqlCommand("insert into login(username, password, profilePicture, fName, lName, position, department) values(@username, @password, @images, @fName, @lName, @position, @department)", con);
+            if (pictureBox1.Image == null)
+            {
+                con.Open();
+                byte[] images = null;
+                imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\logo.png";
+                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(stream);
+                images = brs.ReadBytes((int)stream.Length);
+                SqlCommand cmd = new SqlCommand("insert into login(username, password, profilePicture, fName, lName, position, department) values(@username, @password, @images, @fName, @lName, @position, @department)", con);
 
-            cmd.Parameters.AddWithValue("@username", textBox1.Text.Trim() + "." + textBox2.Text.Trim());
-            cmd.Parameters.AddWithValue("@password", textBox5.Text.Trim());
-            cmd.Parameters.AddWithValue("@fName", textBox1.Text.Trim());
-            cmd.Parameters.AddWithValue("@lName", textBox2.Text.Trim());
-            cmd.Parameters.AddWithValue("@position", textBox3.Text.Trim());
-            cmd.Parameters.AddWithValue("@department", textBox4.Text.Trim());
-            cmd.Parameters.AddWithValue("@images", images);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Added User Successfully!");
+                cmd.Parameters.AddWithValue("@username", textBox1.Text.Trim() + "." + textBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", textBox5.Text.Trim());
+                cmd.Parameters.AddWithValue("@fName", textBox1.Text.Trim());
+                cmd.Parameters.AddWithValue("@lName", textBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@position", textBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@department", textBox4.Text.Trim());
+                cmd.Parameters.AddWithValue("@images", images);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Added User Successfully!");
 
-            SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
-            cmd5.Parameters.AddWithValue("@user", "User " + textBox1.Text.Trim() + " " + textBox2.Text.Trim() + " has been added by the administrator.");
-            cmd5.ExecuteNonQuery();
+                SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                cmd5.Parameters.AddWithValue("@user", "User " + textBox1.Text.Trim() + " " + textBox2.Text.Trim() + " has been added by the administrator.");
+                cmd5.ExecuteNonQuery();
 
-            SqlCommand cmd3 = new SqlCommand("select change, datechanged from logs;", con);
-            DataTable dttbl3 = new DataTable();
-            SqlDataAdapter adapt3 = new SqlDataAdapter(cmd3);
-            adapt3.Fill(dttbl3);
-            dataGridView2.DataSource = dttbl3;
+                SqlCommand cmd3 = new SqlCommand("select change, datechanged from logs;", con);
+                DataTable dttbl3 = new DataTable();
+                SqlDataAdapter adapt3 = new SqlDataAdapter(cmd3);
+                adapt3.Fill(dttbl3);
+                dataGridView2.DataSource = dttbl3;
 
-            SqlCommand cmd1 = new SqlCommand("Select username, password, profilePicture, fName, lName, position, department from login", con);
-            DataTable dttbl = new DataTable();
-            SqlDataAdapter adapt = new SqlDataAdapter(cmd1);
-            adapt.Fill(dttbl);
-            dataGridView1.DataSource = dttbl;
-            dataGridView1.AutoGenerateColumns = false;
+                SqlCommand cmd1 = new SqlCommand("Select username, password, profilePicture, fName, lName, position, department from login", con);
+                DataTable dttbl = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd1);
+                adapt.Fill(dttbl);
+                dataGridView1.DataSource = dttbl;
+                dataGridView1.AutoGenerateColumns = false;
 
-            dataGridView2.Sort(dataGridView2.Columns[1], ListSortDirection.Descending);
-            clear();
-            con.Close();
+                dataGridView2.Sort(dataGridView2.Columns[1], ListSortDirection.Descending);
+                clear();
+                con.Close();
+            }
+            else 
+            {
+                con.Open();
+                byte[] images = null;
+                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(stream);
+                images = brs.ReadBytes((int)stream.Length);
+                SqlCommand cmd = new SqlCommand("insert into login(username, password, profilePicture, fName, lName, position, department) values(@username, @password, @images, @fName, @lName, @position, @department)", con);
+
+                cmd.Parameters.AddWithValue("@username", textBox1.Text.Trim() + "." + textBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", textBox5.Text.Trim());
+                cmd.Parameters.AddWithValue("@fName", textBox1.Text.Trim());
+                cmd.Parameters.AddWithValue("@lName", textBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@position", textBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@department", textBox4.Text.Trim());
+                cmd.Parameters.AddWithValue("@images", images);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Added User Successfully!");
+
+                SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                cmd5.Parameters.AddWithValue("@user", "User " + textBox1.Text.Trim() + " " + textBox2.Text.Trim() + " has been added by the administrator.");
+                cmd5.ExecuteNonQuery();
+
+                SqlCommand cmd3 = new SqlCommand("select change, datechanged from logs;", con);
+                DataTable dttbl3 = new DataTable();
+                SqlDataAdapter adapt3 = new SqlDataAdapter(cmd3);
+                adapt3.Fill(dttbl3);
+                dataGridView2.DataSource = dttbl3;
+
+                SqlCommand cmd1 = new SqlCommand("Select username, password, profilePicture, fName, lName, position, department from login", con);
+                DataTable dttbl = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd1);
+                adapt.Fill(dttbl);
+                dataGridView1.DataSource = dttbl;
+                dataGridView1.AutoGenerateColumns = false;
+
+                dataGridView2.Sort(dataGridView2.Columns[1], ListSortDirection.Descending);
+                clear();
+                con.Close();
+            }
         }
 
         void clear()
@@ -169,6 +215,8 @@ namespace ASELCO_201_System
 
                 pictureBox3.Hide();
                 pictureBox3.Image = null;
+
+                button5.Visible = true;
             }
         }
 
@@ -325,8 +373,9 @@ namespace ASELCO_201_System
             dataGridView2.CurrentRow.Selected = true;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             const string message = "Are you sure you want to logout?";
             const string caption = "Logging out";
             var result = MessageBox.Show(message, caption,

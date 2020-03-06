@@ -25,12 +25,12 @@ C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\Renci.SshNet.dll
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\MySql.Data.xml
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csprojAssemblyReference.cache
-C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.aselco201filesystem.resources
-C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.loginForm.resources
+C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.adminLoginForm.resources
+C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.Aselco201filesystem.resources
+C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.aselco201users.resources
+C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.LoginForm.resources
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.Properties.Resources.resources
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csproj.GenerateResource.cache
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csproj.CopyComplete
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.exe
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.pdb
-C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.adminLoginForm.resources
-C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.aselco201users.resources
