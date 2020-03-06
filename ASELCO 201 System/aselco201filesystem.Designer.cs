@@ -87,8 +87,13 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.addemployee = new System.Windows.Forms.Panel();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -161,11 +166,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -793,6 +793,16 @@
             this.label47.Size = new System.Drawing.Size(262, 20);
             this.label47.TabIndex = 33;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(415, 52);
+            this.label1.MinimumSize = new System.Drawing.Size(262, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 20);
+            this.label1.TabIndex = 32;
+            // 
             // label46
             // 
             this.label46.AutoSize = true;
@@ -842,6 +852,50 @@
             this.addemployee.Name = "addemployee";
             this.addemployee.Size = new System.Drawing.Size(1080, 448);
             this.addemployee.TabIndex = 30;
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox4.HidePromptOnLeave = true;
+            this.maskedTextBox4.Location = new System.Drawing.Point(805, 116);
+            this.maskedTextBox4.Mask = "00-000000000-0";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(262, 26);
+            this.maskedTextBox4.TabIndex = 59;
+            this.maskedTextBox4.Click += new System.EventHandler(this.maskedTextBox3_Click);
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox3.HidePromptOnLeave = true;
+            this.maskedTextBox3.Location = new System.Drawing.Point(805, 81);
+            this.maskedTextBox3.Mask = "000-000-000";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(262, 26);
+            this.maskedTextBox3.TabIndex = 58;
+            this.maskedTextBox3.Click += new System.EventHandler(this.maskedTextBox3_Click);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.HidePromptOnLeave = true;
+            this.maskedTextBox2.Location = new System.Drawing.Point(805, 46);
+            this.maskedTextBox2.Mask = "0000-0000-0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(262, 26);
+            this.maskedTextBox2.TabIndex = 57;
+            this.maskedTextBox2.Click += new System.EventHandler(this.maskedTextBox3_Click);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.HidePromptOnLeave = true;
+            this.maskedTextBox1.Location = new System.Drawing.Point(805, 13);
+            this.maskedTextBox1.Mask = "00-0000000-0";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(262, 26);
+            this.maskedTextBox1.TabIndex = 56;
+            this.maskedTextBox1.Click += new System.EventHandler(this.maskedTextBox3_Click);
             // 
             // dateTimePicker2
             // 
@@ -965,7 +1019,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(32, 26);
             this.textBox3.TabIndex = 34;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
             // 
@@ -974,7 +1028,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(108, 26);
             this.textBox2.TabIndex = 33;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox1
             // 
@@ -1634,56 +1688,6 @@
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(805, 13);
-            this.maskedTextBox1.Mask = "00-0000000-0";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PromptChar = ' ';
-            this.maskedTextBox1.Size = new System.Drawing.Size(262, 26);
-            this.maskedTextBox1.TabIndex = 56;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox2.Location = new System.Drawing.Point(805, 46);
-            this.maskedTextBox2.Mask = "0000-0000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.PromptChar = ' ';
-            this.maskedTextBox2.Size = new System.Drawing.Size(262, 26);
-            this.maskedTextBox2.TabIndex = 57;
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox3.Location = new System.Drawing.Point(805, 81);
-            this.maskedTextBox3.Mask = "000-000-000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.PromptChar = ' ';
-            this.maskedTextBox3.Size = new System.Drawing.Size(262, 26);
-            this.maskedTextBox3.TabIndex = 58;
-            // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox4.Location = new System.Drawing.Point(805, 116);
-            this.maskedTextBox4.Mask = "00-000000000-0";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.PromptChar = ' ';
-            this.maskedTextBox4.Size = new System.Drawing.Size(262, 26);
-            this.maskedTextBox4.TabIndex = 59;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(415, 52);
-            this.label1.MinimumSize = new System.Drawing.Size(262, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 20);
-            this.label1.TabIndex = 32;
-            // 
             // Aselco201filesystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1691,8 +1695,8 @@
             this.ClientSize = new System.Drawing.Size(1080, 558);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.searchemployee);
             this.Controls.Add(this.addemployee);
+            this.Controls.Add(this.searchemployee);
             this.Controls.Add(this.home);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

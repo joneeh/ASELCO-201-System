@@ -66,6 +66,10 @@ namespace ASELCO_201_System
         public Aselco201filesystem()
         {
             InitializeComponent();
+            this.maskedTextBox1.Click += new EventHandler(maskedTextBox3_Click);
+            this.maskedTextBox2.Click += new EventHandler(maskedTextBox3_Click);
+            this.maskedTextBox3.Click += new EventHandler(maskedTextBox3_Click);
+            this.maskedTextBox4.Click += new EventHandler(maskedTextBox3_Click);
         }
 
         private void Aselco201filesystem_FormClosing(object sender, FormClosingEventArgs e)
@@ -159,7 +163,7 @@ namespace ASELCO_201_System
 
             pictureBox5.Visible = false;
             searchtextbox.Visible = false;
-            dataGridView1.Visible = false;            
+            dataGridView1.Visible = false;
         }
 
 
@@ -332,8 +336,8 @@ namespace ASELCO_201_System
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = constring;
                 String query = "SELECT fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, profilepic FROM employeerec WHERE fname = @fname and lname = @lname";
-                
-                label14.Text = fnamedisp +" "+ mname +". " + lnamedisp;
+
+                label14.Text = fnamedisp + " " + mname + ". " + lnamedisp;
                 label1.Text = birthDate;
                 label47.Text = birthplace;
                 label49.Text = educattainment;
@@ -380,11 +384,6 @@ namespace ASELCO_201_System
             }
         }
 
-        private void search_Click_1(object sender, EventArgs e)
-        {
-            dataGridView1.Visible = true;
-        }
-
         private void searchBox(String search)
         {
             con.Open();
@@ -412,31 +411,9 @@ namespace ASELCO_201_System
             e.Handled = true;
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void maskedTextBox3_Click(object sender, EventArgs e)
         {
-            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar))
-            {
-                return;
-            }
-            e.Handled = true;
-        }
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar))
-            {
-                return;
-            }
-            e.Handled = true;
-        }
-
-        private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsControl(e.KeyChar) || char.IsNumber(e.KeyChar))
-            {                          
-                return;
-            }
-            e.Handled = true;
+            this.maskedTextBox1.Select(0, 0);
         }
     }
 }
