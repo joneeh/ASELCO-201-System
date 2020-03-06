@@ -276,7 +276,7 @@ namespace ASELCO_201_System
             {
 
                 byte[] images = null;
-                imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\logo.png";
+                imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
                 FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                 BinaryReader brs = new BinaryReader(stream);
 

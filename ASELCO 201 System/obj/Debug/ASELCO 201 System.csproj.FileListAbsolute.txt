@@ -24,7 +24,6 @@ C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\Renci.SshNet.dll
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\MySql.Data.xml
-C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csprojAssemblyReference.cache
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.adminLoginForm.resources
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.Aselco201filesystem.resources
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.aselco201users.resources
