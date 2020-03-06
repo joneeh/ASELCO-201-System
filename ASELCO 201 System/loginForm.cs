@@ -14,18 +14,18 @@ namespace ASELCO_201_System
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
-        private String constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
-        private String fname;
-        private String lname;
-        private String position;
-        private String department;
+        readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        private readonly string constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
+        private string fname;
+        private string lname;
+        private string position;
+        private string department;
 
         private void getTheName(string username)
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = constring;
-            String query = "SELECT fname, lname, position, department, profilePicture FROM login WHERE username = @username";
+            string query = "SELECT fname, lname, position, department, profilePicture FROM login WHERE username = @username";
 
             con.Open();
             SqlCommand cmd = new SqlCommand(query, con);
@@ -95,19 +95,19 @@ namespace ASELCO_201_System
             con.Open();
             SqlDataReader reader = com.ExecuteReader();
 
-            if (String.IsNullOrEmpty(username.Text) && String.IsNullOrEmpty(password.Text))
+            if (string.IsNullOrEmpty(username.Text) && string.IsNullOrEmpty(password.Text))
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the required fields!";
                 username.Focus();
             }
-            else if (String.IsNullOrEmpty(username.Text))
+            else if (string.IsNullOrEmpty(username.Text))
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the username field!";
                 username.Focus();
             }
-            else if (String.IsNullOrEmpty(password.Text))
+            else if (string.IsNullOrEmpty(password.Text))
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the password field!";
@@ -118,9 +118,9 @@ namespace ASELCO_201_System
             {
                 MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["profilePicture"]);
 
-                this.getTheName(username.Text);
+                getTheName(username.Text);
                 MessageBox.Show("Welcome, " + UppercaseFirst(fname) + "!");
-                this.Hide();
+                Hide();
                 Aselco201filesystem fm = new Aselco201filesystem();
 
                 fm.Image = new Bitmap(ms);
@@ -143,17 +143,17 @@ namespace ASELCO_201_System
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            this.AcceptButton = button1;
+            AcceptButton = button1;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            this.AcceptButton = button1;
+            AcceptButton = button1;
         }
 
         private void admin_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             adminLoginForm fm = new adminLoginForm();
             fm.Show();
         }

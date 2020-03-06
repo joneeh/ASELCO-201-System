@@ -13,14 +13,14 @@ namespace ASELCO_201_System
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
-        private String adminusername;
+        readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        private string adminusername;
 
-        private void getTheName(String username)
+        private void getTheName(string username)
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
-            String query = "SELECT username FROM adminlogin WHERE username = @username";
+            string query = "SELECT username FROM adminlogin WHERE username = @username";
             try
             {
                 con.Open();
@@ -55,7 +55,7 @@ namespace ASELCO_201_System
         private void button2_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlCommand cmd = new SqlCommand("Select * from adminlogin where username=@username AND password=@password", con);            
+            SqlCommand cmd = new SqlCommand("Select * from adminlogin where username=@username AND password=@password", con);
             cmd.Parameters.AddWithValue("@username", username.Text);
             cmd.Parameters.AddWithValue("@password", password.Text);
             con.Open();
@@ -71,19 +71,19 @@ namespace ASELCO_201_System
             con.Open();
             SqlDataReader reader = com.ExecuteReader();
 
-            if (String.IsNullOrEmpty(username.Text) && String.IsNullOrEmpty(password.Text))
+            if (string.IsNullOrEmpty(username.Text) && string.IsNullOrEmpty(password.Text))
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the required fields!";
                 username.Focus();
             }
-            else if (String.IsNullOrEmpty(username.Text))
+            else if (string.IsNullOrEmpty(username.Text))
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the username field!";
                 username.Focus();
             }
-            else if (String.IsNullOrEmpty(password.Text))
+            else if (string.IsNullOrEmpty(password.Text))
             {
                 labelMessage.ForeColor = Color.Red;
                 labelMessage.Text = "Please fill the password field!";
@@ -92,9 +92,9 @@ namespace ASELCO_201_System
 
             else if (count == 1)
             {
-                this.getTheName(username.Text);
+                getTheName(username.Text);
                 MessageBox.Show("Welcome, " + UppercaseFirst(adminusername) + "!");
-                this.Hide();
+                Hide();
                 aselco201users fm = new aselco201users();
                 fm.Show();
             }
@@ -110,17 +110,17 @@ namespace ASELCO_201_System
 
         private void username_TextChanged(object sender, EventArgs e)
         {
-            this.AcceptButton = button2;
+            AcceptButton = button2;
         }
 
         private void password_TextChanged(object sender, EventArgs e)
         {
-            this.AcceptButton = button2;
+            AcceptButton = button2;
         }
 
         private void hr_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             LoginForm fm = new LoginForm();
             fm.Show();
         }

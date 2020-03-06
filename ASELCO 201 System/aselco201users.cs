@@ -11,7 +11,7 @@ namespace ASELCO_201_System
     public partial class aselco201users : Form
     {
         string imgLocation = "";
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
 
         public aselco201users()
         {
@@ -120,7 +120,7 @@ namespace ASELCO_201_System
                 clear();
                 con.Close();
             }
-            else 
+            else
             {
                 con.Open();
                 byte[] images = null;
@@ -185,7 +185,7 @@ namespace ASELCO_201_System
             searchBox(textBox11.Text);
         }
 
-        private void searchBox(String search)
+        private void searchBox(string search)
         {
             con.Open();
             string query = "select * from login where (fname+lname) like '%" + textBox11.Text + "%'";
@@ -209,7 +209,7 @@ namespace ASELCO_201_System
                 textBox8.Text = selectedRow.Cells[6].FormattedValue.ToString();
                 textBox7.Text = selectedRow.Cells[5].FormattedValue.ToString();
 
-                var data = (Byte[])(selectedRow.Cells[2].Value);
+                var data = (byte[])(selectedRow.Cells[2].Value);
                 var stream = new MemoryStream(data);
                 pictureBox2.Image = Image.FromStream(stream);
 
@@ -364,7 +364,7 @@ namespace ASELCO_201_System
             }
             else
             {
-                this.DialogResult = DialogResult.No;
+                DialogResult = DialogResult.No;
             }
         }
 
@@ -375,7 +375,6 @@ namespace ASELCO_201_System
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             const string message = "Are you sure you want to logout?";
             const string caption = "Logging out";
             var result = MessageBox.Show(message, caption,
@@ -386,11 +385,11 @@ namespace ASELCO_201_System
             {
                 adminLoginForm login = new adminLoginForm();
                 login.Show();
-                this.Hide();
+                Hide();
             }
             else
             {
-                this.DialogResult = DialogResult.No;
+                DialogResult = DialogResult.No;
             }
         }
     }

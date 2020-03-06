@@ -10,22 +10,22 @@ namespace ASELCO_201_System
     public partial class Aselco201filesystem : Form
     {
         string imgLocation = "";
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
-        private String constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
+        readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        private readonly string constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
 
-        private String fnamedisp;
-        private String lnamedisp;
-        private String mname;
-        private String birthDate;
-        private String birthplace;
-        private String educattainment;
-        private String datehired;
-        private String sssno;
-        private String hdmfno;
-        private String tin;
-        private String philhealth;
-        private String employeeclass;
-        private String employeestatus;
+        private string fnamedisp;
+        private string lnamedisp;
+        private string mname;
+        private string birthDate;
+        private string birthplace;
+        private string educattainment;
+        private string datehired;
+        private string sssno;
+        private string hdmfno;
+        private string tin;
+        private string philhealth;
+        private string employeeclass;
+        private string employeestatus;
         private Image Image2;
         Timer tmr = null;
 
@@ -36,29 +36,29 @@ namespace ASELCO_201_System
             set { image = value; }
         }
 
-        private String uname;
-        public String Uname
+        private string uname;
+        public string Uname
         {
             get { return uname; }
             set { uname = value; }
         }
 
-        private String lname;
-        public String Lname
+        private string lname;
+        public string Lname
         {
             get { return lname; }
             set { lname = value; }
         }
 
-        private String position;
-        public String Postn
+        private string position;
+        public string Postn
         {
             get { return position; }
             set { position = value; }
         }
 
-        private String department;
-        public String Deptn
+        private string department;
+        public string Deptn
         {
             get { return department; }
             set { department = value; }
@@ -67,10 +67,10 @@ namespace ASELCO_201_System
         public Aselco201filesystem()
         {
             InitializeComponent();
-            this.maskedTextBox1.Click += new EventHandler(maskedTextBox1_Click);
-            this.maskedTextBox2.Click += new EventHandler(maskedTextBox1_Click);
-            this.maskedTextBox3.Click += new EventHandler(maskedTextBox1_Click);
-            this.maskedTextBox4.Click += new EventHandler(maskedTextBox1_Click);
+            maskedTextBox1.Click += new EventHandler(maskedTextBox1_Click);
+            maskedTextBox2.Click += new EventHandler(maskedTextBox1_Click);
+            maskedTextBox3.Click += new EventHandler(maskedTextBox1_Click);
+            maskedTextBox4.Click += new EventHandler(maskedTextBox1_Click);
         }
 
         private void Aselco201filesystem_FormClosing(object sender, FormClosingEventArgs e)
@@ -81,7 +81,6 @@ namespace ASELCO_201_System
             }
         }
 
-        //Close Button Function
         public static bool CloseCancel()
         {
             const string message = "Are you sure that you would like to close?";
@@ -107,12 +106,6 @@ namespace ASELCO_201_System
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //Uppercase First Letter Converter
         static string UppercaseFirst(string s)
         {
             if (string.IsNullOrEmpty(s))
@@ -124,7 +117,15 @@ namespace ASELCO_201_System
 
         private void aselco201filesystem_Load(object sender, EventArgs e)
         {
-            button5.Visible = false;
+            pictureBox1.Image = Image;
+            showname.Text = UppercaseFirst(Uname) + " " + UppercaseFirst(Lname);
+            showpos.Text = UppercaseFirst(Postn) + ", " + UppercaseFirst(Deptn);
+
+            StartTimer();
+
+            greetings();
+
+            hidepanels();
 
             con.Open();
 
@@ -136,13 +137,20 @@ namespace ASELCO_201_System
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.MultiSelect = false;
 
+            SqlCommand cmd1 = new SqlCommand("Select fname, lname, mname, datehired, profilepic from employeeRec", con);
+            DataTable dttbl1 = new DataTable();
+            SqlDataAdapter adapt1 = new SqlDataAdapter(cmd1);
+            adapt1.Fill(dttbl1);
+
+            dataGridView4.DataSource = dttbl1;
+            dataGridView4.AutoGenerateColumns = false;
+            dataGridView4.MultiSelect = false;
+            
             con.Close();
-            StartTimer();
+        }
 
-            pictureBox1.Image = Image;
-            showname.Text = UppercaseFirst(Uname) + " " + UppercaseFirst(Lname);
-            showpos.Text = UppercaseFirst(Postn) + ", " + UppercaseFirst(Deptn);
-
+        void greetings()
+        {
             var date = DateTime.Now;
             if (date.Hour < 11)
             {
@@ -160,19 +168,23 @@ namespace ASELCO_201_System
             {
                 label42.Text = "Good Evening! " + UppercaseFirst(Uname) + " " + UppercaseFirst(Lname) + ".";
             }
+        }
 
+        void hidepanels()
+        {
             searchemployee.Visible = false;
             addemployee.Visible = false;
-
+            employeesort.Visible = false;
             pictureBox5.Visible = false;
             searchtextbox.Visible = false;
             dataGridView1.Visible = false;
+            button5.Visible = false;
         }
 
         private void StartTimer()
         {
             tmr = new System.Windows.Forms.Timer();
-            tmr.Interval = 1000;
+            tmr.Interval = 1;
             tmr.Tick += new EventHandler(tmr_Tick);
             tmr.Enabled = true;
         }
@@ -230,11 +242,11 @@ namespace ASELCO_201_System
             {
                 LoginForm login = new LoginForm();
                 login.Show();
-                this.Hide();
+                Hide();
             }
             else
             {
-                this.DialogResult = DialogResult.No;
+                DialogResult = DialogResult.No;
             }
         }
 
@@ -246,6 +258,7 @@ namespace ASELCO_201_System
             pictureBox5.Visible = true;
             searchtextbox.Visible = true;
             dataGridView1.Visible = false;
+            employeesort.Visible = false;
         }
 
         private void addToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -256,6 +269,7 @@ namespace ASELCO_201_System
             pictureBox5.Visible = false;
             searchtextbox.Visible = false;
             dataGridView1.Visible = false;
+            employeesort.Visible = false;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -263,6 +277,17 @@ namespace ASELCO_201_System
             searchemployee.Visible = false;
             addemployee.Visible = false;
             home.Visible = true;
+            pictureBox5.Visible = false;
+            searchtextbox.Visible = false;
+            dataGridView1.Visible = false;
+            employeesort.Visible = false;
+        }
+
+        private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            searchemployee.Visible = false;
+            addemployee.Visible = false;
+            employeesort.Visible = true;
             pictureBox5.Visible = false;
             searchtextbox.Visible = false;
             dataGridView1.Visible = false;
@@ -388,7 +413,7 @@ namespace ASELCO_201_System
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = constring;
-                String query = "SELECT fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, profilepic FROM employeerec WHERE fname = @fname and lname = @lname";
+                string query = "SELECT fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, profilepic FROM employeerec WHERE fname = @fname and lname = @lname";
 
                 label14.Text = fnamedisp + " " + mname + ". " + lnamedisp;
                 label1.Text = birthDate;
@@ -437,7 +462,7 @@ namespace ASELCO_201_System
             }
         }
 
-        private void searchBox(String search)
+        private void searchBox(string search)
         {
             con.Open();
             string query = "select * from employeerec where (fname+lname) like '%" + searchtextbox.Text + "%'";
@@ -467,10 +492,10 @@ namespace ASELCO_201_System
 
         private void maskedTextBox1_Click(object sender, EventArgs e)
         {
-            this.maskedTextBox1.Select(0, 0);
-            this.maskedTextBox2.Select(0, 0);
-            this.maskedTextBox3.Select(0, 0);
-            this.maskedTextBox4.Select(0, 0);
+            maskedTextBox1.Select(0, 0);
+            maskedTextBox2.Select(0, 0);
+            maskedTextBox3.Select(0, 0);
+            maskedTextBox4.Select(0, 0);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -510,8 +535,44 @@ namespace ASELCO_201_System
             }
             else
             {
-                this.DialogResult = DialogResult.No;
+                DialogResult = DialogResult.No;
             }
+        }
+
+        private void comboBox3_SelectedValueChanged(object sender, EventArgs e)
+        {
+            con.Open();
+
+            SqlCommand cmd1 = new SqlCommand("Select fname, lname, mname from employeeRec where employeeclass=@employeeclass", con);
+
+            cmd1.Parameters.AddWithValue("@employeeclass", comboBox3.Text.Trim());
+            DataTable dttbl1 = new DataTable();
+            SqlDataAdapter adapt1 = new SqlDataAdapter(cmd1);
+            adapt1.Fill(dttbl1);
+            dataGridView5.DataSource = dttbl1;
+            dataGridView5.AutoGenerateColumns = false;
+            dataGridView5.MultiSelect = false;
+            cmd1.ExecuteNonQuery();
+
+            con.Close();
+        }
+
+        private void comboBox4_SelectedValueChanged(object sender, EventArgs e)
+        {
+            con.Open();
+
+            SqlCommand cmd2 = new SqlCommand("Select fname, lname, mname from employeeRec where employeestatus=@employeestatus", con);
+
+            cmd2.Parameters.AddWithValue("@employeestatus", comboBox4.Text.Trim());
+            DataTable dttbl2 = new DataTable();
+            SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
+            adapt2.Fill(dttbl2);
+            dataGridView6.DataSource = dttbl2;
+            dataGridView6.AutoGenerateColumns = false;
+            dataGridView6.MultiSelect = false;
+            cmd2.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }
