@@ -39,8 +39,6 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeeClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeestatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addemployee = new System.Windows.Forms.Panel();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
@@ -193,6 +191,7 @@
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.profilePic = new System.Windows.Forms.DataGridViewImageColumn();
             this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -311,9 +310,7 @@
             // listToolStripMenuItem
             // 
             this.listToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.employeesToolStripMenuItem,
-            this.employeeClassToolStripMenuItem,
-            this.employeestatusToolStripMenuItem});
+            this.employeesToolStripMenuItem});
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
             this.listToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.listToolStripMenuItem.Text = "List";
@@ -321,21 +318,9 @@
             // employeesToolStripMenuItem
             // 
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.employeesToolStripMenuItem.Text = "Employees";
             this.employeesToolStripMenuItem.Click += new System.EventHandler(this.employeesToolStripMenuItem_Click);
-            // 
-            // employeeClassToolStripMenuItem
-            // 
-            this.employeeClassToolStripMenuItem.Name = "employeeClassToolStripMenuItem";
-            this.employeeClassToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.employeeClassToolStripMenuItem.Text = "Employee Class";
-            // 
-            // employeestatusToolStripMenuItem
-            // 
-            this.employeestatusToolStripMenuItem.Name = "employeestatusToolStripMenuItem";
-            this.employeestatusToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.employeestatusToolStripMenuItem.Text = "Employee Status";
             // 
             // addemployee
             // 
@@ -447,7 +432,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(979, 211);
+            this.button1.Location = new System.Drawing.Point(979, 191);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 23);
             this.button1.TabIndex = 52;
@@ -490,24 +475,26 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Active"});
-            this.comboBox2.Location = new System.Drawing.Point(749, 212);
+            this.comboBox2.Location = new System.Drawing.Point(749, 192);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(159, 24);
             this.comboBox2.TabIndex = 44;
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Regular",
             "Probationary",
             "Contractual"});
-            this.comboBox1.Location = new System.Drawing.Point(416, 211);
+            this.comboBox1.Location = new System.Drawing.Point(416, 191);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(159, 24);
             this.comboBox1.TabIndex = 43;
@@ -574,7 +561,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(280, 212);
+            this.label26.Location = new System.Drawing.Point(280, 192);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(126, 20);
             this.label26.TabIndex = 30;
@@ -1002,7 +989,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(606, 212);
+            this.label25.Location = new System.Drawing.Point(606, 192);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(134, 20);
             this.label25.TabIndex = 31;
@@ -1619,7 +1606,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(343, 213);
+            this.label12.Location = new System.Drawing.Point(343, 193);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(126, 20);
             this.label12.TabIndex = 17;
@@ -1630,7 +1617,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(669, 213);
+            this.label13.Location = new System.Drawing.Point(669, 193);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(134, 20);
             this.label13.TabIndex = 18;
@@ -1751,7 +1738,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(477, 213);
+            this.label54.Location = new System.Drawing.Point(477, 193);
             this.label54.MinimumSize = new System.Drawing.Size(180, 2);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(180, 20);
@@ -1761,7 +1748,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(807, 213);
+            this.label55.Location = new System.Drawing.Point(807, 193);
             this.label55.MinimumSize = new System.Drawing.Size(180, 2);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(180, 20);
@@ -1998,6 +1985,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.dataGridView4);
             this.groupBox3.Location = new System.Drawing.Point(12, 44);
             this.groupBox3.Name = "groupBox3";
@@ -2005,6 +1993,15 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Employee List";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(10, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(0, 25);
+            this.label21.TabIndex = 1;
             // 
             // dataGridView4
             // 
@@ -2084,10 +2081,10 @@
             this.ClientSize = new System.Drawing.Size(1080, 558);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.employeesort);
             this.Controls.Add(this.addemployee);
-            this.Controls.Add(this.home);
             this.Controls.Add(this.searchemployee);
+            this.Controls.Add(this.employeesort);
+            this.Controls.Add(this.home);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2142,6 +2139,7 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2156,8 +2154,6 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem employeeClassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem employeestatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.Panel addemployee;
         private System.Windows.Forms.Label label26;
@@ -2319,5 +2315,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.Label label21;
     }
 }

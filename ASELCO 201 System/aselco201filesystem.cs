@@ -137,7 +137,7 @@ namespace ASELCO_201_System
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.MultiSelect = false;
 
-            SqlCommand cmd1 = new SqlCommand("Select fname, lname, mname, datehired, profilepic from employeeRec", con);
+            SqlCommand cmd1 = new SqlCommand("Select fname, lname, mname, datehired, profilepic from employeeRec where employeestatus = 'active'", con);
             DataTable dttbl1 = new DataTable();
             SqlDataAdapter adapt1 = new SqlDataAdapter(cmd1);
             adapt1.Fill(dttbl1);
@@ -145,7 +145,18 @@ namespace ASELCO_201_System
             dataGridView4.DataSource = dttbl1;
             dataGridView4.AutoGenerateColumns = false;
             dataGridView4.MultiSelect = false;
-            
+
+            SqlCommand con = new SqlCommand("SELECT COUNT(*) FROM employeerec where employeestatus = 'active'", con);
+            Int32 count = Convert.ToInt32(con.ExecuteScalar());
+            if (count > 0)
+            {
+                label21.Text = "No. of Employees: " + Convert.ToString(count.ToString());
+            }
+            else
+            {
+                label21.Text = "No.1 of Employees: 0";
+            }
+
             con.Close();
         }
 
@@ -299,7 +310,6 @@ namespace ASELCO_201_System
 
             if (pictureBox6.Image == null)
             {
-
                 byte[] images = null;
                 imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
                 FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
@@ -336,6 +346,8 @@ namespace ASELCO_201_System
                 SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
                 cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                 cmd5.ExecuteNonQuery();
+
+
 
                 con.Close();
                 clear();
