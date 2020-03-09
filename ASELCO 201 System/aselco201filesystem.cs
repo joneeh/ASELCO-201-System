@@ -130,6 +130,8 @@ namespace ASELCO_201_System
 
             con.Open();
 
+            counter();
+
             SqlCommand cmd = new SqlCommand("Select fname, lname, mname from employeeRec", con);
             DataTable dttbl = new DataTable();
             SqlDataAdapter adapt = new SqlDataAdapter(cmd);
@@ -143,14 +145,19 @@ namespace ASELCO_201_System
             SqlDataAdapter adapt1 = new SqlDataAdapter(cmd1);
             adapt1.Fill(dttbl1);
 
+            
+
             dataGridView4.DataSource = dttbl1;
             dataGridView4.AutoGenerateColumns = false;
             dataGridView4.MultiSelect = false;
 
             con.Close();
+        }
 
-            SqlCommand concount = new SqlCommand("SELECT COUNT(*) FROM employeerec where employeestatus = 'active'", con);
-            int count = Convert.ToInt32(concount.ExecuteScalar());
+        void counter()
+        {
+            SqlCommand concnt = new SqlCommand("SELECT COUNT(*) FROM employeerec where employeestatus = 'active'", con);
+            int count = Convert.ToInt32(concnt.ExecuteScalar());
             if (count > 0)
             {
                 label21.Text = "No. of Employees: " + Convert.ToString(count.ToString());
@@ -322,10 +329,10 @@ namespace ASELCO_201_System
                 images = brs.ReadBytes((int)stream.Length);
                 SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
                     "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
-                    "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic)" +
+                    "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
                     " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
                     "null, null, null, null, null, null, null, null, null, null, null, " +
-                    "null, null, null, null, null, @dateadded, null, @profilepic)", con);
+                    "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
 
                 var date = DateTime.Now;
                 cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
@@ -350,6 +357,8 @@ namespace ASELCO_201_System
                 SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
                 cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                 cmd5.ExecuteNonQuery();
+
+                counter();
 
                 con.Close();
                 clear();
@@ -363,10 +372,10 @@ namespace ASELCO_201_System
                 images = brs.ReadBytes((int)stream.Length);
                 SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
                     "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
-                    "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic)" +
+                    "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
                     " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
                     "null, null, null, null, null, null, null, null, null, null, null, " +
-                    "null, null, null, null, null, @dateadded, null, @profilepic)", con);
+                    "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
 
                 var date = DateTime.Now;
                 cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
@@ -391,6 +400,8 @@ namespace ASELCO_201_System
                 SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
                 cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                 cmd5.ExecuteNonQuery();
+                
+                counter();
 
                 con.Close();
                 clear();
@@ -399,7 +410,7 @@ namespace ASELCO_201_System
 
         void clear()
         {
-            textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = maskedTextBox1.Text = maskedTextBox2.Text = maskedTextBox3.Text = maskedTextBox4.Text = "";
+            textBox11.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = maskedTextBox1.Text = maskedTextBox2.Text = maskedTextBox3.Text = maskedTextBox4.Text = "";
             dateTimePicker1 = dateTimePicker2 = null;
             comboBox1.Text = comboBox2.Text = "";
             pictureBox6.Image = pictureBox3.Image = null;
@@ -608,7 +619,6 @@ namespace ASELCO_201_System
                 dateTimePicker7.Visible = false;
                 label43.Visible = false;
             }
-
         }
     }
 }

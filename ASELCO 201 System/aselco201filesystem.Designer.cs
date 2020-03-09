@@ -40,6 +40,11 @@
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addemployee = new System.Windows.Forms.Panel();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.label43 = new System.Windows.Forms.Label();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
@@ -174,6 +179,8 @@
             this.label55 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.searchemployee = new System.Windows.Forms.Panel();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -198,13 +205,6 @@
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateHired1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.label43 = new System.Windows.Forms.Label();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
-            this.label45 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.addemployee.SuspendLayout();
             this.tabControl5.SuspendLayout();
@@ -373,6 +373,65 @@
             this.addemployee.Name = "addemployee";
             this.addemployee.Size = new System.Drawing.Size(1080, 448);
             this.addemployee.TabIndex = 30;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(416, 226);
+            this.textBox11.MaxLength = 4;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(95, 26);
+            this.textBox11.TabIndex = 57;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.Black;
+            this.label45.Location = new System.Drawing.Point(347, 231);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(58, 20);
+            this.label45.TabIndex = 56;
+            this.label45.Text = "ID No.:";
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.CustomFormat = "dd / mm/ yyyy";
+            this.dateTimePicker7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker7.Location = new System.Drawing.Point(749, 229);
+            this.dateTimePicker7.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateTimePicker7.RightToLeftLayout = true;
+            this.dateTimePicker7.Size = new System.Drawing.Size(160, 23);
+            this.dateTimePicker7.TabIndex = 55;
+            this.dateTimePicker7.Value = new System.DateTime(2020, 3, 6, 13, 20, 32, 0);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.Color.Black;
+            this.label43.Location = new System.Drawing.Point(685, 229);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(48, 20);
+            this.label43.TabIndex = 54;
+            this.label43.Text = "Date:";
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.CustomFormat = "dd / mm/ yyyy";
+            this.dateTimePicker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker6.Location = new System.Drawing.Point(748, 229);
+            this.dateTimePicker6.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateTimePicker6.RightToLeftLayout = true;
+            this.dateTimePicker6.Size = new System.Drawing.Size(160, 23);
+            this.dateTimePicker6.TabIndex = 53;
+            this.dateTimePicker6.Value = new System.DateTime(2020, 3, 6, 13, 20, 32, 0);
             // 
             // maskedTextBox4
             // 
@@ -1818,6 +1877,27 @@
             this.searchemployee.Size = new System.Drawing.Size(1092, 461);
             this.searchemployee.TabIndex = 17;
             // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(345, 193);
+            this.label57.MinimumSize = new System.Drawing.Size(100, 2);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(100, 20);
+            this.label57.TabIndex = 58;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.Black;
+            this.label56.Location = new System.Drawing.Point(281, 192);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(58, 20);
+            this.label56.TabIndex = 57;
+            this.label56.Text = "ID No.:";
+            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -2093,86 +2173,6 @@
             this.dateHired1.Name = "dateHired1";
             this.dateHired1.ReadOnly = true;
             // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.CustomFormat = "dd / mm/ yyyy";
-            this.dateTimePicker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker6.Location = new System.Drawing.Point(748, 229);
-            this.dateTimePicker6.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker6.RightToLeftLayout = true;
-            this.dateTimePicker6.Size = new System.Drawing.Size(160, 23);
-            this.dateTimePicker6.TabIndex = 53;
-            this.dateTimePicker6.Value = new System.DateTime(2020, 3, 6, 13, 20, 32, 0);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.Color.Black;
-            this.label43.Location = new System.Drawing.Point(685, 229);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(48, 20);
-            this.label43.TabIndex = 54;
-            this.label43.Text = "Date:";
-            // 
-            // dateTimePicker7
-            // 
-            this.dateTimePicker7.CustomFormat = "dd / mm/ yyyy";
-            this.dateTimePicker7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker7.Location = new System.Drawing.Point(749, 229);
-            this.dateTimePicker7.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker7.RightToLeftLayout = true;
-            this.dateTimePicker7.Size = new System.Drawing.Size(160, 23);
-            this.dateTimePicker7.TabIndex = 55;
-            this.dateTimePicker7.Value = new System.DateTime(2020, 3, 6, 13, 20, 32, 0);
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.Black;
-            this.label45.Location = new System.Drawing.Point(347, 231);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(58, 20);
-            this.label45.TabIndex = 56;
-            this.label45.Text = "ID No.:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(416, 226);
-            this.textBox11.MaxLength = 4;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(95, 26);
-            this.textBox11.TabIndex = 57;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.ForeColor = System.Drawing.Color.Black;
-            this.label56.Location = new System.Drawing.Point(281, 192);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(58, 20);
-            this.label56.TabIndex = 57;
-            this.label56.Text = "ID No.:";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(345, 193);
-            this.label57.MinimumSize = new System.Drawing.Size(100, 2);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(100, 20);
-            this.label57.TabIndex = 58;
-            // 
             // Aselco201filesystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2180,9 +2180,9 @@
             this.ClientSize = new System.Drawing.Size(1080, 558);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.searchemployee);
             this.Controls.Add(this.addemployee);
             this.Controls.Add(this.employeesort);
+            this.Controls.Add(this.searchemployee);
             this.Controls.Add(this.home);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
