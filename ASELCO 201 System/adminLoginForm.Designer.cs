@@ -35,11 +35,11 @@
             this.password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.TextBox();
-            this.hr = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.hr = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,16 +101,6 @@
             this.username.Text = "administrator";
             this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
-            // hr
-            // 
-            this.hr.Location = new System.Drawing.Point(64, 328);
-            this.hr.Name = "hr";
-            this.hr.Size = new System.Drawing.Size(44, 23);
-            this.hr.TabIndex = 12;
-            this.hr.Text = "HR";
-            this.hr.UseVisualStyleBackColor = true;
-            this.hr.Click += new System.EventHandler(this.hr_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -146,6 +136,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(131, 10);
             this.panel2.TabIndex = 18;
+            // 
+            // hr
+            // 
+            this.hr.Location = new System.Drawing.Point(64, 328);
+            this.hr.Name = "hr";
+            this.hr.Size = new System.Drawing.Size(44, 23);
+            this.hr.TabIndex = 12;
+            this.hr.Text = "HR";
+            this.hr.UseVisualStyleBackColor = true;
+            this.hr.Click += new System.EventHandler(this.hr_Click);
             // 
             // adminLoginForm
             // 
@@ -186,10 +186,10 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.Button hr;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button hr;
     }
 }
