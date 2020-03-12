@@ -27,6 +27,8 @@ namespace ASELCO_201_System
         private string employeeclass;
         private string employeestatus;
         private int id;
+        private string dateresigned;
+        private string datedied;
         private Image Image2;
         Timer tmr = null;
 
@@ -126,7 +128,14 @@ namespace ASELCO_201_System
 
             greetings();
 
+            listviewloadd();
+
             hidepanels();
+
+        }
+
+        void listviewloadd()
+        {
 
             con.Open();
 
@@ -136,16 +145,15 @@ namespace ASELCO_201_System
             DataTable dttbl = new DataTable();
             SqlDataAdapter adapt = new SqlDataAdapter(cmd);
             adapt.Fill(dttbl);
+
             dataGridView1.DataSource = dttbl;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.MultiSelect = false;
 
-            SqlCommand cmd1 = new SqlCommand("Select fname, lname, mname, datehired, profilepic from employeeRec where employeestatus = 'active'", con);
+            SqlCommand cmd1 = new SqlCommand("Select fname, lname, mname, datehired, profilepic from employeeRec", con);
             DataTable dttbl1 = new DataTable();
             SqlDataAdapter adapt1 = new SqlDataAdapter(cmd1);
             adapt1.Fill(dttbl1);
-
-            
 
             dataGridView4.DataSource = dttbl1;
             dataGridView4.AutoGenerateColumns = false;
@@ -160,11 +168,11 @@ namespace ASELCO_201_System
             int count = Convert.ToInt32(concnt.ExecuteScalar());
             if (count > 0)
             {
-                label21.Text = "No. of Employees: " + Convert.ToString(count.ToString());
+                label21.Text = "Active Employees: " + Convert.ToString(count.ToString());
             }
             else
             {
-                label21.Text = "No.1 of Employees: 0";
+                label21.Text = "Active Employees: 0";
             }
         }
 
@@ -201,6 +209,9 @@ namespace ASELCO_201_System
             dateTimePicker6.Visible = false;
             dateTimePicker7.Visible = false;
             label43.Visible = false;
+            comboBox1.Visible = false;
+            label26.Visible = false;
+            groupBox4.Visible = false;
         }
 
         private void StartTimer()
@@ -224,7 +235,6 @@ namespace ASELCO_201_System
             {
                 searchtextbox.Text = "";
             }
-
             searchtextbox.ForeColor = Color.Black;
         }
 
@@ -233,12 +243,9 @@ namespace ASELCO_201_System
             if (searchtextbox.Text == "")
             {
                 searchtextbox.Text = "Search";
-
-                button5.Visible = false;
-
-                clear();
-
+                dataGridView1.Visible = false;
                 searchtextbox.ForeColor = Color.Silver;
+                clear();
             }
         }
 
@@ -259,7 +266,6 @@ namespace ASELCO_201_System
             var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.YesNo,
                                          MessageBoxIcon.Question);
-
             if (result == DialogResult.Yes)
             {
                 LoginForm login = new LoginForm();
@@ -279,7 +285,7 @@ namespace ASELCO_201_System
             home.Visible = false;
             pictureBox5.Visible = true;
             searchtextbox.Visible = true;
-            dataGridView1.Visible = false;
+            dataGridView1.Visible = true;
             employeesort.Visible = false;
         }
 
@@ -321,97 +327,283 @@ namespace ASELCO_201_System
 
             if (pictureBox6.Image == null)
             {
-                byte[] images = null;
-                imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
-                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                BinaryReader brs = new BinaryReader(stream);
+                if (comboBox2.Text == "Resigned")
+                {
+                    byte[] images = null;
+                    imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(stream);
 
-                images = brs.ReadBytes((int)stream.Length);
-                SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
-                    "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
-                    "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
-                    " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
-                    "null, null, null, null, null, null, null, null, null, null, null, " +
-                    "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
+                    images = brs.ReadBytes((int)stream.Length);
+                    SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
+                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, null, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, @dateresigned, null)", con);
 
-                var date = DateTime.Now;
-                cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
-                cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
-                cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@birthDate", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
-                cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
-                cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
-                cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@employeeclass", comboBox1.Text.Trim());
-                cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
-                cmd.Parameters.AddWithValue("@profilepic", images);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Added User Successfully!");
+                    var date = DateTime.Now;
+                    cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
+                    cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim() + ".");
+                    cmd.Parameters.AddWithValue("@birthDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
+                    cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
+                    cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@profilepic", images);
+                    cmd.Parameters.AddWithValue("@dateresigned", dateTimePicker7.Value);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added User Successfully!");
 
-                SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
-                cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
-                cmd5.ExecuteNonQuery();
+                    SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                    cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
+                    cmd5.ExecuteNonQuery();
 
-                counter();
+                    counter();
 
-                con.Close();
-                clear();
+                    con.Close();
+                    listviewloadd();
+                    clear();
+                }
+                else if (comboBox2.Text == "Deceased")
+                {
+                    byte[] images = null;
+                    imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(stream);
+
+                    images = brs.ReadBytes((int)stream.Length);
+                    SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
+                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, null, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, null, @datedied)", con);
+
+                    var date = DateTime.Now;
+                    cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
+                    cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim() + ".");
+                    cmd.Parameters.AddWithValue("@birthDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
+                    cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
+                    cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@profilepic", images);
+                    cmd.Parameters.AddWithValue("@datedied", dateTimePicker6.Value);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added User Successfully!");
+
+                    SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                    cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
+                    cmd5.ExecuteNonQuery();
+
+                    counter();
+
+                    con.Close();
+                    listviewloadd();
+                    clear();
+                }
+                else
+                {
+                    byte[] images = null;
+                    imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(stream);
+
+                    images = brs.ReadBytes((int)stream.Length);
+                    SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
+                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
+
+                    var date = DateTime.Now;
+                    cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
+                    cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim() + ".");
+                    cmd.Parameters.AddWithValue("@birthDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
+                    cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
+                    cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@employeeclass", comboBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@profilepic", images);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added User Successfully!");
+
+                    SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                    cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
+                    cmd5.ExecuteNonQuery();
+
+                    counter();
+
+                    con.Close();
+                    listviewloadd();
+                    clear();
+                }                
             }
             else
             {
-                byte[] images = null;
-                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                BinaryReader brs = new BinaryReader(stream);
+                if (comboBox2.Text == "Resigned")
+                {
+                    byte[] images = null;
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(stream);
 
-                images = brs.ReadBytes((int)stream.Length);
-                SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
-                    "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
-                    "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
-                    " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
-                    "null, null, null, null, null, null, null, null, null, null, null, " +
-                    "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
+                    images = brs.ReadBytes((int)stream.Length);
+                    SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
+                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, null, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, @dateresigned, @employeeclass)", con);
 
-                var date = DateTime.Now;
-                cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
-                cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
-                cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@birthDate", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
-                cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
-                cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
-                cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@employeeclass", comboBox1.Text.Trim());
-                cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
-                cmd.Parameters.AddWithValue("@profilepic", images);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Added User Successfully!");
+                    var date = DateTime.Now;
+                    cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
+                    cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim() + ".");
+                    cmd.Parameters.AddWithValue("@birthDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
+                    cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
+                    cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@employeeclass", null);
+                    cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dateresigned", dateTimePicker7.Value);
+                    cmd.Parameters.AddWithValue("@profilepic", images);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added User Successfully!");
 
-                SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
-                cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
-                cmd5.ExecuteNonQuery();
-                
-                counter();
+                    SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                    cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
+                    cmd5.ExecuteNonQuery();
 
-                con.Close();
-                clear();
+                    counter();
+
+                    con.Close();
+                    listviewloadd();
+                    clear();
+                }
+                else if (comboBox2.Text == "Deceased")
+                {
+                    byte[] images = null;
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(stream);
+
+                    images = brs.ReadBytes((int)stream.Length);
+                    SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
+                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, null, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, null, @datedied)", con);
+
+                    var date = DateTime.Now;
+                    cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
+                    cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim() + ".");
+                    cmd.Parameters.AddWithValue("@birthDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
+                    cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
+                    cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@datedied", dateTimePicker6.Value);
+                    cmd.Parameters.AddWithValue("@profilepic", images);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added User Successfully!");
+
+                    SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                    cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
+                    cmd5.ExecuteNonQuery();
+
+                    counter();
+
+                    con.Close();
+                    listviewloadd();
+                    clear();
+                }
+                else
+                {
+                    byte[] images = null;
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(stream);
+
+                    images = brs.ReadBytes((int)stream.Length);
+                    SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
+                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
+
+                    var date = DateTime.Now;
+                    cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
+                    cmd.Parameters.AddWithValue("@fname", textBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@lname", textBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@mname", textBox3.Text.Trim() + ".");
+                    cmd.Parameters.AddWithValue("@birthDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@birthplace", textBox5.Text.Trim());
+                    cmd.Parameters.AddWithValue("@educattainment", textBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@datehired", dateTimePicker2.Value);
+                    cmd.Parameters.AddWithValue("@sssno", maskedTextBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hdmfno", maskedTextBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@employeeclass", comboBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@profilepic", images);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added User Successfully!");
+
+                    SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                    cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
+                    cmd5.ExecuteNonQuery();
+
+                    counter();
+
+                    con.Close();
+                    listviewloadd();
+                    clear();
+                }
             }
         }
 
         void clear()
         {
-            textBox11.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = maskedTextBox1.Text = maskedTextBox2.Text = maskedTextBox3.Text = maskedTextBox4.Text = "";
-            dateTimePicker1 = dateTimePicker2 = null;
+            textBox11.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = maskedTextBox1.Text = maskedTextBox2.Text = maskedTextBox3.Text = maskedTextBox4.Text = "";            
             comboBox1.Text = comboBox2.Text = "";
             pictureBox6.Image = pictureBox3.Image = null;
 
@@ -432,6 +624,7 @@ namespace ASELCO_201_System
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.CurrentRow.Selected = true;
+            button5.Visible = true;
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 int index = e.RowIndex;
@@ -439,9 +632,9 @@ namespace ASELCO_201_System
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = constring;
-                string query = "SELECT id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, profilepic FROM employeerec WHERE fname = @fname and lname = @lname";
+                string query = "SELECT id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, profilepic, dateresigned, datedied FROM employeerec WHERE fname = @fname and lname = @lname";
 
-                label14.Text = fnamedisp + " " + mname + ". " + lnamedisp;
+                label14.Text = fnamedisp + " " + mname + " " + lnamedisp;
                 label1.Text = birthDate;
                 label47.Text = birthplace;
                 label49.Text = educattainment;
@@ -452,6 +645,8 @@ namespace ASELCO_201_System
                 label50.Text = philhealth;
                 label54.Text = employeeclass;
                 label55.Text = employeestatus;
+                label59.Text = dateresigned;
+                label60.Text = datedied;
                 label57.Text = string.Format("{0:0000}", id);
                 pictureBox3.Image = Image2;
 
@@ -482,6 +677,8 @@ namespace ASELCO_201_System
                     philhealth = rdr["philhealth"].ToString();
                     employeeclass = rdr["employeeclass"].ToString();
                     employeestatus = rdr["employeestatus"].ToString();
+                    dateresigned = rdr["dateresigned"].ToString();
+                    datedied = rdr["datedied"].ToString();
                 }
                 con.Close();
             }
@@ -503,7 +700,6 @@ namespace ASELCO_201_System
             searchBox(searchtextbox.Text);
 
             button5.Visible = true;
-            dataGridView1.Visible = true;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -557,6 +753,7 @@ namespace ASELCO_201_System
                 dataGridView1.Rows.RemoveAt(rowIndex); MessageBox.Show("User Deleted!");
                 clear();
                 con.Close();
+                listviewloadd();
             }
             else
             {
@@ -605,19 +802,39 @@ namespace ASELCO_201_System
 
             if (comboBox2.Text == "Deceased")
             {
+                comboBox1.Visible = false;
+                label26.Visible = false;
                 dateTimePicker6.Visible = true;
+                dateTimePicker7.Visible = false;
                 label43.Visible = true;
             }
             else if (comboBox2.Text == "Resigned")
             {
+                comboBox1.Visible = false;
+                label26.Visible = false;
                 dateTimePicker7.Visible = true;
+                dateTimePicker6.Visible = false;
                 label43.Visible = true;
             }
             else
             {
+                comboBox1.Visible = true;
+                label26.Visible = true;
                 dateTimePicker6.Visible = false;
                 dateTimePicker7.Visible = false;
                 label43.Visible = false;
+            }
+        }
+
+        private void comboBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBox4.Text == "Active")
+            {
+                groupBox4.Visible = true;
+            }
+            else
+            {
+                groupBox4.Visible = false;
             }
         }
     }
