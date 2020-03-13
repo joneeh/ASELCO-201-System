@@ -151,7 +151,13 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabControl9 = new System.Windows.Forms.TabControl();
+            this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.tabPage41 = new System.Windows.Forms.TabPage();
             this.tabPage19 = new System.Windows.Forms.TabPage();
+            this.tabControl8 = new System.Windows.Forms.TabControl();
+            this.tabPage39 = new System.Windows.Forms.TabPage();
+            this.tabPage40 = new System.Windows.Forms.TabPage();
             this.tabPage22 = new System.Windows.Forms.TabPage();
             this.tabPage23 = new System.Windows.Forms.TabPage();
             this.tabPage24 = new System.Windows.Forms.TabPage();
@@ -206,12 +212,6 @@
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateHired1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl8 = new System.Windows.Forms.TabControl();
-            this.tabPage39 = new System.Windows.Forms.TabPage();
-            this.tabPage40 = new System.Windows.Forms.TabPage();
-            this.tabControl9 = new System.Windows.Forms.TabControl();
-            this.tabPage20 = new System.Windows.Forms.TabPage();
-            this.tabPage41 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.addemployee.SuspendLayout();
             this.tabControl5.SuspendLayout();
@@ -238,7 +238,9 @@
             this.tabPage2.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabControl9.SuspendLayout();
             this.tabPage19.SuspendLayout();
+            this.tabControl8.SuspendLayout();
             this.tabPage26.SuspendLayout();
             this.tabControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -251,8 +253,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.tabControl8.SuspendLayout();
-            this.tabControl9.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -314,14 +314,14 @@
             // addToolStripMenuItem1
             // 
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.addToolStripMenuItem1.Text = "Add Employee";
             this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.searchToolStripMenuItem.Text = "Search Employee";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
@@ -1580,6 +1580,36 @@
             this.tabPage3.Text = "Education Background Records";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // tabControl9
+            // 
+            this.tabControl9.Controls.Add(this.tabPage20);
+            this.tabControl9.Controls.Add(this.tabPage41);
+            this.tabControl9.Location = new System.Drawing.Point(-2, 0);
+            this.tabControl9.Name = "tabControl9";
+            this.tabControl9.SelectedIndex = 0;
+            this.tabControl9.Size = new System.Drawing.Size(1085, 166);
+            this.tabControl9.TabIndex = 1;
+            // 
+            // tabPage20
+            // 
+            this.tabPage20.Location = new System.Drawing.Point(4, 22);
+            this.tabPage20.Name = "tabPage20";
+            this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage20.Size = new System.Drawing.Size(1077, 140);
+            this.tabPage20.TabIndex = 0;
+            this.tabPage20.Text = "Diploma";
+            this.tabPage20.UseVisualStyleBackColor = true;
+            // 
+            // tabPage41
+            // 
+            this.tabPage41.Location = new System.Drawing.Point(4, 22);
+            this.tabPage41.Name = "tabPage41";
+            this.tabPage41.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage41.Size = new System.Drawing.Size(1077, 140);
+            this.tabPage41.TabIndex = 1;
+            this.tabPage41.Text = "TOR";
+            this.tabPage41.UseVisualStyleBackColor = true;
+            // 
             // tabPage19
             // 
             this.tabPage19.Controls.Add(this.tabControl8);
@@ -1589,6 +1619,36 @@
             this.tabPage19.TabIndex = 3;
             this.tabPage19.Text = "Neuro/Psycho Examinatio Result";
             this.tabPage19.UseVisualStyleBackColor = true;
+            // 
+            // tabControl8
+            // 
+            this.tabControl8.Controls.Add(this.tabPage39);
+            this.tabControl8.Controls.Add(this.tabPage40);
+            this.tabControl8.Location = new System.Drawing.Point(-2, 0);
+            this.tabControl8.Name = "tabControl8";
+            this.tabControl8.SelectedIndex = 0;
+            this.tabControl8.Size = new System.Drawing.Size(1085, 166);
+            this.tabControl8.TabIndex = 1;
+            // 
+            // tabPage39
+            // 
+            this.tabPage39.Location = new System.Drawing.Point(4, 22);
+            this.tabPage39.Name = "tabPage39";
+            this.tabPage39.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage39.Size = new System.Drawing.Size(1077, 140);
+            this.tabPage39.TabIndex = 0;
+            this.tabPage39.Text = "Neuro/Psycho Examination Result";
+            this.tabPage39.UseVisualStyleBackColor = true;
+            // 
+            // tabPage40
+            // 
+            this.tabPage40.Location = new System.Drawing.Point(4, 22);
+            this.tabPage40.Name = "tabPage40";
+            this.tabPage40.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage40.Size = new System.Drawing.Size(1077, 140);
+            this.tabPage40.TabIndex = 1;
+            this.tabPage40.Text = "Drug Test Report";
+            this.tabPage40.UseVisualStyleBackColor = true;
             // 
             // tabPage22
             // 
@@ -1875,7 +1935,7 @@
             // 
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(583, 236);
+            this.label60.Location = new System.Drawing.Point(413, 232);
             this.label60.MinimumSize = new System.Drawing.Size(120, 2);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(120, 20);
@@ -2199,66 +2259,6 @@
             this.dateHired1.Name = "dateHired1";
             this.dateHired1.ReadOnly = true;
             // 
-            // tabControl8
-            // 
-            this.tabControl8.Controls.Add(this.tabPage39);
-            this.tabControl8.Controls.Add(this.tabPage40);
-            this.tabControl8.Location = new System.Drawing.Point(-2, 0);
-            this.tabControl8.Name = "tabControl8";
-            this.tabControl8.SelectedIndex = 0;
-            this.tabControl8.Size = new System.Drawing.Size(1085, 166);
-            this.tabControl8.TabIndex = 1;
-            // 
-            // tabPage39
-            // 
-            this.tabPage39.Location = new System.Drawing.Point(4, 22);
-            this.tabPage39.Name = "tabPage39";
-            this.tabPage39.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage39.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage39.TabIndex = 0;
-            this.tabPage39.Text = "Neuro/Psycho Examination Result";
-            this.tabPage39.UseVisualStyleBackColor = true;
-            // 
-            // tabPage40
-            // 
-            this.tabPage40.Location = new System.Drawing.Point(4, 22);
-            this.tabPage40.Name = "tabPage40";
-            this.tabPage40.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage40.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage40.TabIndex = 1;
-            this.tabPage40.Text = "Drug Test Report";
-            this.tabPage40.UseVisualStyleBackColor = true;
-            // 
-            // tabControl9
-            // 
-            this.tabControl9.Controls.Add(this.tabPage20);
-            this.tabControl9.Controls.Add(this.tabPage41);
-            this.tabControl9.Location = new System.Drawing.Point(-2, 0);
-            this.tabControl9.Name = "tabControl9";
-            this.tabControl9.SelectedIndex = 0;
-            this.tabControl9.Size = new System.Drawing.Size(1085, 166);
-            this.tabControl9.TabIndex = 1;
-            // 
-            // tabPage20
-            // 
-            this.tabPage20.Location = new System.Drawing.Point(4, 22);
-            this.tabPage20.Name = "tabPage20";
-            this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage20.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage20.TabIndex = 0;
-            this.tabPage20.Text = "Diploma";
-            this.tabPage20.UseVisualStyleBackColor = true;
-            // 
-            // tabPage41
-            // 
-            this.tabPage41.Location = new System.Drawing.Point(4, 22);
-            this.tabPage41.Name = "tabPage41";
-            this.tabPage41.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage41.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage41.TabIndex = 1;
-            this.tabPage41.Text = "TOR";
-            this.tabPage41.UseVisualStyleBackColor = true;
-            // 
             // Aselco201filesystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2312,7 +2312,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabControl9.ResumeLayout(false);
             this.tabPage19.ResumeLayout(false);
+            this.tabControl8.ResumeLayout(false);
             this.tabPage26.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -2328,8 +2330,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.tabControl8.ResumeLayout(false);
-            this.tabControl9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

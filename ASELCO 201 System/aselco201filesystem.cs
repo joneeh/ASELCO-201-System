@@ -212,6 +212,9 @@ namespace ASELCO_201_System
             comboBox1.Visible = false;
             label26.Visible = false;
             groupBox4.Visible = false;
+            label60.Visible = false;
+            label58.Visible = false;
+            label59.Visible = false;
         }
 
         private void StartTimer()
@@ -243,8 +246,8 @@ namespace ASELCO_201_System
             if (searchtextbox.Text == "")
             {
                 searchtextbox.Text = "Search";
-                dataGridView1.Visible = false;
                 searchtextbox.ForeColor = Color.Silver;
+                label58.Visible = false;
                 clear();
             }
         }
@@ -605,9 +608,9 @@ namespace ASELCO_201_System
         {
             textBox11.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = maskedTextBox1.Text = maskedTextBox2.Text = maskedTextBox3.Text = maskedTextBox4.Text = "";            
             comboBox1.Text = comboBox2.Text = "";
-            pictureBox6.Image = pictureBox3.Image = null;
+            pictureBox6.Image = pictureBox3.Image = null;            
 
-            label1.Text = label14.Text = label47.Text = label48.Text = label57.Text = label49.Text = label50.Text = label51.Text = label52.Text = label53.Text = label55.Text = label54.Text = null;
+            label1.Text = label14.Text = label47.Text = label48.Text = label57.Text = label49.Text = label50.Text = label51.Text = label52.Text = label53.Text = label55.Text = label54.Text = label59.Text = label60.Text = null;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -676,9 +679,36 @@ namespace ASELCO_201_System
                     tin = rdr["tin"].ToString();
                     philhealth = rdr["philhealth"].ToString();
                     employeeclass = rdr["employeeclass"].ToString();
-                    employeestatus = rdr["employeestatus"].ToString();
+
                     dateresigned = rdr["dateresigned"].ToString();
+                    if (String.IsNullOrEmpty(dateresigned) == true)
+                    {
+                        dateresigned = null;
+                    }
+                    else
+                    {
+                        dateresigned = rdr.GetDateTime(15).ToString(@"dd/MM/yyyy");
+                        label60.Visible = false;
+                        label59.Visible = true;
+                        label54.Visible = false;
+                        label12.Visible = false;
+                        label58.Visible = true;
+                    }
                     datedied = rdr["datedied"].ToString();
+                    if (String.IsNullOrEmpty(datedied) == true)
+                    {
+                        datedied = null;
+                    }
+                    else
+                    {
+                        datedied = rdr.GetDateTime(16).ToString(@"dd/MM/yyyy");
+                        label59.Visible = false;
+                        label60.Visible = true;
+                        label54.Visible = false;
+                        label12.Visible = false;
+                        label58.Visible = true;
+                    }
+                    employeestatus = rdr["employeestatus"].ToString();
                 }
                 con.Close();
             }
