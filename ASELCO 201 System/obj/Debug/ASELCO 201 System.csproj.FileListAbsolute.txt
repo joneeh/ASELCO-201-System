@@ -34,3 +34,22 @@ C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.exe
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.pdb
 C:\Users\gege\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csprojAssemblyReference.cache
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\ASELCO 201 System.exe.config
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\ASELCO 201 System.exe
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\ASELCO 201 System.pdb
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\Google.Protobuf.dll
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\Renci.SshNet.dll
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\bin\Debug\MySql.Data.xml
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csprojAssemblyReference.cache
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.adminLoginForm.resources
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.Aselco201filesystem.resources
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.aselco201users.resources
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.LoginForm.resources
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO_201_System.Properties.Resources.resources
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csproj.GenerateResource.cache
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csproj.CoreCompileInputs.cache
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.csproj.CopyComplete
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.exe
+C:\Users\NEWERA10\Source\Repos\joneeh\ASELCO-201-System\ASELCO 201 System\obj\Debug\ASELCO 201 System.pdb

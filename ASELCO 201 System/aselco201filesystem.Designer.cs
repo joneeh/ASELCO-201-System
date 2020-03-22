@@ -1997,11 +1997,11 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("DS-Digital", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.ForestGreen;
             this.label41.Location = new System.Drawing.Point(64, 411);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(0, 27);
+            this.label41.Size = new System.Drawing.Size(0, 31);
             this.label41.TabIndex = 2;
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2266,9 +2266,9 @@
             this.ClientSize = new System.Drawing.Size(1080, 558);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.employeesort);
             this.Controls.Add(this.searchemployee);
             this.Controls.Add(this.addemployee);
-            this.Controls.Add(this.employeesort);
             this.Controls.Add(this.home);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

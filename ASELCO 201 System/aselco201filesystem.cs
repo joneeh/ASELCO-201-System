@@ -10,8 +10,10 @@ namespace ASELCO_201_System
     public partial class Aselco201filesystem : Form
     {
         string imgLocation = "";
-        readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
-        private readonly string constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
+        //readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\NEWERA10\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        //private readonly string constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
+        private readonly string constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\NEWERA10\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
 
         private string fnamedisp;
         private string lnamedisp;
@@ -158,6 +160,16 @@ namespace ASELCO_201_System
             dataGridView4.DataSource = dttbl1;
             dataGridView4.AutoGenerateColumns = false;
             dataGridView4.MultiSelect = false;
+
+            SqlCommand cmd2 = new SqlCommand("Select fname, lname, mname from employeeRec where employeestatus=@employeestatus", con);
+            cmd2.Parameters.AddWithValue("@employeestatus", comboBox4.Text.Trim());
+            DataTable dttbl2 = new DataTable();
+            SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
+            adapt2.Fill(dttbl2);
+
+            dataGridView6.DataSource = dttbl2;
+            dataGridView6.AutoGenerateColumns = false;
+            dataGridView6.MultiSelect = false;
 
             con.Close();
         }
@@ -333,7 +345,8 @@ namespace ASELCO_201_System
                 if (comboBox2.Text == "Resigned")
                 {
                     byte[] images = null;
-                    imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    //imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    imgLocation = "C:\\Users\\newera10\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
                     FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader brs = new BinaryReader(stream);
 
@@ -359,7 +372,7 @@ namespace ASELCO_201_System
                     cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
                     cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
-                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dateadded", date);
                     cmd.Parameters.AddWithValue("@profilepic", images);
                     cmd.Parameters.AddWithValue("@dateresigned", dateTimePicker7.Value);
                     cmd.ExecuteNonQuery();
@@ -369,8 +382,6 @@ namespace ASELCO_201_System
                     cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                     cmd5.ExecuteNonQuery();
 
-                    counter();
-
                     con.Close();
                     listviewloadd();
                     clear();
@@ -378,7 +389,8 @@ namespace ASELCO_201_System
                 else if (comboBox2.Text == "Deceased")
                 {
                     byte[] images = null;
-                    imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    //imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    imgLocation = "C:\\Users\\newera10\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
                     FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader brs = new BinaryReader(stream);
 
@@ -404,7 +416,7 @@ namespace ASELCO_201_System
                     cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
                     cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
-                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dateadded", date);
                     cmd.Parameters.AddWithValue("@profilepic", images);
                     cmd.Parameters.AddWithValue("@datedied", dateTimePicker6.Value);
                     cmd.ExecuteNonQuery();
@@ -414,8 +426,6 @@ namespace ASELCO_201_System
                     cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                     cmd5.ExecuteNonQuery();
 
-                    counter();
-
                     con.Close();
                     listviewloadd();
                     clear();
@@ -423,7 +433,8 @@ namespace ASELCO_201_System
                 else
                 {
                     byte[] images = null;
-                    imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    //imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
+                    imgLocation = "C:\\Users\\newera10\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
                     FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader brs = new BinaryReader(stream);
 
@@ -450,7 +461,7 @@ namespace ASELCO_201_System
                     cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@employeeclass", comboBox1.Text.Trim());
                     cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
-                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dateadded", date);
                     cmd.Parameters.AddWithValue("@profilepic", images);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Added User Successfully!");
@@ -458,8 +469,6 @@ namespace ASELCO_201_System
                     SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
                     cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                     cmd5.ExecuteNonQuery();
-
-                    counter();
 
                     con.Close();
                     listviewloadd();
@@ -497,7 +506,7 @@ namespace ASELCO_201_System
                     cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@employeeclass", null);
                     cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
-                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dateadded", date);
                     cmd.Parameters.AddWithValue("@dateresigned", dateTimePicker7.Value);
                     cmd.Parameters.AddWithValue("@profilepic", images);
                     cmd.ExecuteNonQuery();
@@ -506,8 +515,6 @@ namespace ASELCO_201_System
                     SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
                     cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                     cmd5.ExecuteNonQuery();
-
-                    counter();
 
                     con.Close();
                     listviewloadd();
@@ -541,7 +548,7 @@ namespace ASELCO_201_System
                     cmd.Parameters.AddWithValue("@tin", maskedTextBox3.Text.Trim());
                     cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
-                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dateadded", date);
                     cmd.Parameters.AddWithValue("@datedied", dateTimePicker6.Value);
                     cmd.Parameters.AddWithValue("@profilepic", images);
                     cmd.ExecuteNonQuery();
@@ -550,8 +557,6 @@ namespace ASELCO_201_System
                     SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
                     cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                     cmd5.ExecuteNonQuery();
-
-                    counter();
 
                     con.Close();
                     listviewloadd();
@@ -586,7 +591,7 @@ namespace ASELCO_201_System
                     cmd.Parameters.AddWithValue("@philhealth", maskedTextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@employeeclass", comboBox1.Text.Trim());
                     cmd.Parameters.AddWithValue("@employeestatus", comboBox2.Text.Trim());
-                    cmd.Parameters.AddWithValue("@dateadded", date.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dateadded", date);
                     cmd.Parameters.AddWithValue("@profilepic", images);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Added User Successfully!");
@@ -594,8 +599,6 @@ namespace ASELCO_201_System
                     SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
                     cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
                     cmd5.ExecuteNonQuery();
-
-                    counter();
 
                     con.Close();
                     listviewloadd();

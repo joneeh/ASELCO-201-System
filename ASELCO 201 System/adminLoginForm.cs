@@ -13,13 +13,15 @@ namespace ASELCO_201_System
             InitializeComponent();
         }
 
-        readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        //readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+        readonly SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\NEWERA10\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
         private string adminusername;
 
         private void getTheName(string username)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
+            //con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
+            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\NEWERA10\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
             string query = "SELECT username FROM adminlogin WHERE username = @username";
             try
             {
@@ -54,11 +56,10 @@ namespace ASELCO_201_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30");
+            con.Open();
             SqlCommand cmd = new SqlCommand("Select * from adminlogin where username=@username AND password=@password", con);
             cmd.Parameters.AddWithValue("@username", username.Text);
             cmd.Parameters.AddWithValue("@password", password.Text);
-            con.Open();
             SqlDataAdapter adapt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adapt.Fill(ds);
