@@ -23,6 +23,7 @@ CREATE TABLE [dbo].[logs] (
     [datechanged] DATETIME      NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
 CREATE TABLE [dbo].[employeeRec] (
     [Id]                   INT           NOT NULL,
     [fname]                VARCHAR (50)  NULL,
@@ -65,5 +66,8 @@ CREATE TABLE [dbo].[employeeRec] (
 );
 
 
-
-
+create view employechart (employeeClass, Count)
+as
+select employeeclass, COUNT(*)
+from employeeRec where employeeclass IS NOT NULL
+group by employeeclass

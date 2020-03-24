@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Aselco201filesystem));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -212,6 +216,10 @@
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateHired1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.aselcoTwoZeroOneDataSet = new ASELCO_201_System.aselcoTwoZeroOneDataSet();
+            this.employechartBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employechartTableAdapter = new ASELCO_201_System.aselcoTwoZeroOneDataSetTableAdapters.employechartTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.addemployee.SuspendLayout();
             this.tabControl5.SuspendLayout();
@@ -253,6 +261,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aselcoTwoZeroOneDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employechartBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -2073,6 +2084,7 @@
             // 
             // employeesort
             // 
+            this.employeesort.Controls.Add(this.chart1);
             this.employeesort.Controls.Add(this.groupBox5);
             this.employeesort.Controls.Add(this.groupBox4);
             this.employeesort.Controls.Add(this.groupBox3);
@@ -2085,7 +2097,7 @@
             // 
             this.groupBox5.Controls.Add(this.dataGridView6);
             this.groupBox5.Controls.Add(this.comboBox4);
-            this.groupBox5.Location = new System.Drawing.Point(480, 171);
+            this.groupBox5.Location = new System.Drawing.Point(497, 171);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(253, 269);
             this.groupBox5.TabIndex = 3;
@@ -2129,7 +2141,7 @@
             // 
             this.groupBox4.Controls.Add(this.dataGridView5);
             this.groupBox4.Controls.Add(this.comboBox3);
-            this.groupBox4.Location = new System.Drawing.Point(777, 171);
+            this.groupBox4.Location = new System.Drawing.Point(816, 171);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(253, 269);
             this.groupBox4.TabIndex = 2;
@@ -2160,7 +2172,7 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Regular",
-            "Probation",
+            "Probationary",
             "Contractual"});
             this.comboBox3.Location = new System.Drawing.Point(127, 0);
             this.comboBox3.Name = "comboBox3";
@@ -2172,9 +2184,9 @@
             // 
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.dataGridView4);
-            this.groupBox3.Location = new System.Drawing.Point(12, 44);
+            this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(436, 396);
+            this.groupBox3.Size = new System.Drawing.Size(436, 428);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Employee List";
@@ -2205,7 +2217,7 @@
             this.lastName,
             this.midName,
             this.dateHired1});
-            this.dataGridView4.Location = new System.Drawing.Point(6, 127);
+            this.dataGridView4.Location = new System.Drawing.Point(8, 159);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersVisible = false;
@@ -2258,6 +2270,45 @@
             this.dateHired1.HeaderText = "Date Hired";
             this.dateHired1.Name = "dateHired1";
             this.dateHired1.ReadOnly = true;
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chart1.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
+            this.chart1.BorderlineWidth = 5;
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            this.chart1.DataSource = this.employechartBindingSource;
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
+            this.chart1.Location = new System.Drawing.Point(497, 12);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series5.Color = System.Drawing.Color.ForestGreen;
+            series5.Legend = "Legend1";
+            series5.Name = "Number of Employee per Class";
+            series5.XValueMember = "employeeClass";
+            series5.YValueMembers = "Count";
+            this.chart1.Series.Add(series5);
+            this.chart1.Size = new System.Drawing.Size(571, 143);
+            this.chart1.TabIndex = 4;
+            this.chart1.Text = "chart1";
+            // 
+            // aselcoTwoZeroOneDataSet
+            // 
+            this.aselcoTwoZeroOneDataSet.DataSetName = "aselcoTwoZeroOneDataSet";
+            this.aselcoTwoZeroOneDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employechartBindingSource
+            // 
+            this.employechartBindingSource.DataMember = "employechart";
+            this.employechartBindingSource.DataSource = this.aselcoTwoZeroOneDataSet;
+            // 
+            // employechartTableAdapter
+            // 
+            this.employechartTableAdapter.ClearBeforeFill = true;
             // 
             // Aselco201filesystem
             // 
@@ -2330,6 +2381,9 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aselcoTwoZeroOneDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employechartBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2519,5 +2573,9 @@
         private System.Windows.Forms.TabControl tabControl8;
         private System.Windows.Forms.TabPage tabPage39;
         private System.Windows.Forms.TabPage tabPage40;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private aselcoTwoZeroOneDataSet aselcoTwoZeroOneDataSet;
+        private System.Windows.Forms.BindingSource employechartBindingSource;
+        private aselcoTwoZeroOneDataSetTableAdapters.employechartTableAdapter employechartTableAdapter;
     }
 }

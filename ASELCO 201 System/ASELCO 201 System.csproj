@@ -72,6 +72,11 @@
     <Compile Include="aselco201users.Designer.cs">
       <DependentUpon>aselco201users.cs</DependentUpon>
     </Compile>
+    <Compile Include="aselcoTwoZeroOneDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>aselcoTwoZeroOneDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="connection.cs" />
     <Compile Include="cont.cs" />
     <Compile Include="home.cs" />
@@ -106,6 +111,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="aselcoTwoZeroOneDataSet1.xsc">
+      <DependentUpon>aselcoTwoZeroOneDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="aselcoTwoZeroOneDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>aselcoTwoZeroOneDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="aselcoTwoZeroOneDataSet1.xss">
+      <DependentUpon>aselcoTwoZeroOneDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

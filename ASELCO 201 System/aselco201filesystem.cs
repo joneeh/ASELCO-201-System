@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ASELCO_201_System
 {
@@ -122,6 +123,8 @@ namespace ASELCO_201_System
 
         private void aselco201filesystem_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'aselcoTwoZeroOneDataSet.employechart' table. You can move, or remove it, as needed.
+            this.employechartTableAdapter.Fill(this.aselcoTwoZeroOneDataSet.employechart);
             pictureBox1.Image = Image;
             showname.Text = UppercaseFirst(Uname) + " " + UppercaseFirst(Lname);
             showpos.Text = UppercaseFirst(Postn) + ", " + UppercaseFirst(Deptn);
@@ -138,6 +141,8 @@ namespace ASELCO_201_System
 
         void listviewloadd()
         {
+
+            this.employechartTableAdapter.Fill(this.aselcoTwoZeroOneDataSet.employechart);
 
             con.Open();
 
