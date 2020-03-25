@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Aselco201filesystem));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -202,6 +202,7 @@
             this.home = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.employeesort = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -216,10 +217,7 @@
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateHired1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.aselcoTwoZeroOneDataSet = new ASELCO_201_System.aselcoTwoZeroOneDataSet();
             this.employechartBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employechartTableAdapter = new ASELCO_201_System.aselcoTwoZeroOneDataSetTableAdapters.employechartTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.addemployee.SuspendLayout();
             this.tabControl5.SuspendLayout();
@@ -255,14 +253,13 @@
             this.searchemployee.SuspendLayout();
             this.home.SuspendLayout();
             this.employeesort.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aselcoTwoZeroOneDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employechartBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -2093,6 +2090,38 @@
             this.employeesort.Size = new System.Drawing.Size(1080, 449);
             this.employeesort.TabIndex = 10;
             // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chart1.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
+            this.chart1.BorderlineWidth = 5;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea1.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea1.BorderColor = System.Drawing.Color.Gainsboro;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(497, 12);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Color = System.Drawing.Color.ForestGreen;
+            series1.Legend = "Legend1";
+            series1.Name = "Number of Employee per Class";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(571, 143);
+            this.chart1.TabIndex = 4;
+            this.chart1.Text = "chart1";
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dataGridView6);
@@ -2271,45 +2300,6 @@
             this.dateHired1.Name = "dateHired1";
             this.dateHired1.ReadOnly = true;
             // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.chart1.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
-            this.chart1.BorderlineWidth = 5;
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            this.chart1.DataSource = this.employechartBindingSource;
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
-            this.chart1.Location = new System.Drawing.Point(497, 12);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series5.Color = System.Drawing.Color.ForestGreen;
-            series5.Legend = "Legend1";
-            series5.Name = "Number of Employee per Class";
-            series5.XValueMember = "employeeClass";
-            series5.YValueMembers = "Count";
-            this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(571, 143);
-            this.chart1.TabIndex = 4;
-            this.chart1.Text = "chart1";
-            // 
-            // aselcoTwoZeroOneDataSet
-            // 
-            this.aselcoTwoZeroOneDataSet.DataSetName = "aselcoTwoZeroOneDataSet";
-            this.aselcoTwoZeroOneDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employechartBindingSource
-            // 
-            this.employechartBindingSource.DataMember = "employechart";
-            this.employechartBindingSource.DataSource = this.aselcoTwoZeroOneDataSet;
-            // 
-            // employechartTableAdapter
-            // 
-            this.employechartTableAdapter.ClearBeforeFill = true;
-            // 
             // Aselco201filesystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2374,6 +2364,7 @@
             this.home.ResumeLayout(false);
             this.home.PerformLayout();
             this.employeesort.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -2381,8 +2372,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aselcoTwoZeroOneDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employechartBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2574,8 +2563,5 @@
         private System.Windows.Forms.TabPage tabPage39;
         private System.Windows.Forms.TabPage tabPage40;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private aselcoTwoZeroOneDataSet aselcoTwoZeroOneDataSet;
-        private System.Windows.Forms.BindingSource employechartBindingSource;
-        private aselcoTwoZeroOneDataSetTableAdapters.employechartTableAdapter employechartTableAdapter;
-    }
+        private System.Windows.Forms.BindingSource employechartBindingSource;}
 }
