@@ -1,27 +1,24 @@
-﻿CREATE TABLE [dbo].[login] (
-    [Id]             INT           IDENTITY (1, 1) NOT NULL,
-    [username]       NVARCHAR (20) NOT NULL,
-    [password]       NVARCHAR (50) NOT NULL,
-    [profilePicture] IMAGE         NULL,
-    [fName]          VARCHAR (30)  NOT NULL,
-    [lName]          VARCHAR (30)  NOT NULL,
-    [position]       VARCHAR (30)  NOT NULL,
-    [department]     VARCHAR (30)  NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
-);
-
-CREATE TABLE [dbo].[adminlogin] (
+﻿CREATE TABLE [dbo].[adminlogin] (
     [Id]       INT           IDENTITY (1, 1) NOT NULL,
     [username] NVARCHAR (20) NOT NULL,
     [password] NVARCHAR (50) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-CREATE TABLE [dbo].[logs] (
-    [Id]          INT           IDENTITY (1, 1) NOT NULL,
-    [change]      VARCHAR (100) NOT NULL,
-    [datechanged] DATETIME      NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+CREATE TABLE [dbo].[contracts] (
+    [id]        INT          IDENTITY (1, 1) NOT NULL,
+    [empid]     INT          NULL,
+    [imagename] VARCHAR (30) NULL,
+    [imageins]  IMAGE        NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[drugtestreport] (
+    [id]        INT          IDENTITY (1, 1) NOT NULL,
+    [empid]     INT          NULL,
+    [imagename] VARCHAR (30) NULL,
+    [imageins]  IMAGE        NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
 );
 
 CREATE TABLE [dbo].[employeeRec] (
@@ -63,30 +60,37 @@ CREATE TABLE [dbo].[employeeRec] (
     [servicerecordsID]     INT           NULL,
     [meritdemeritID]       INT           NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
-    FOREIGN KEY ([medicalcertificateID]) REFERENCES [dbo].[medicalcertificate] ([id]),
-    FOREIGN KEY ([drugtestreportID]) REFERENCES [dbo].[drugtestreport] ([id]),
-    FOREIGN KEY ([memorandumID]) REFERENCES [dbo].[memorandum] ([id]),
-    FOREIGN KEY ([contractsID]) REFERENCES [dbo].[contracts] ([id]),
     FOREIGN KEY ([performanceEvalID]) REFERENCES [dbo].[performanceEval] ([id]),
     FOREIGN KEY ([servicerecordsID]) REFERENCES [dbo].[servicerecords] ([id]),
+    FOREIGN KEY ([drugtestreportID]) REFERENCES [dbo].[drugtestreport] ([id]),
+    FOREIGN KEY ([contractsID]) REFERENCES [dbo].[contracts] ([id]),
+    FOREIGN KEY ([medicalcertificateID]) REFERENCES [dbo].[medicalcertificate] ([id]),
+    FOREIGN KEY ([memorandumID]) REFERENCES [dbo].[memorandum] ([id]),
     FOREIGN KEY ([meritdemeritID]) REFERENCES [dbo].[meritdemerit] ([id])
 );
 
-CREATE TABLE [dbo].[contracts] (
-    [id]        INT          IDENTITY (1, 1) NOT NULL,
-    [imagename] VARCHAR (30) NULL,
-    [imageins]  IMAGE        NULL,
-    PRIMARY KEY CLUSTERED ([id] ASC)
+CREATE TABLE [dbo].[login] (
+    [Id]             INT           IDENTITY (1, 1) NOT NULL,
+    [username]       NVARCHAR (20) NOT NULL,
+    [password]       NVARCHAR (50) NOT NULL,
+    [profilePicture] IMAGE         NULL,
+    [fName]          VARCHAR (30)  NOT NULL,
+    [lName]          VARCHAR (30)  NOT NULL,
+    [position]       VARCHAR (30)  NOT NULL,
+    [department]     VARCHAR (30)  NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-CREATE TABLE [dbo].[drugtestreport] (
-    [id]        INT          IDENTITY (1, 1) NOT NULL,
-    [imagename] VARCHAR (30) NULL,
-    [imageins]  IMAGE        NULL,
-    PRIMARY KEY CLUSTERED ([id] ASC)
+CREATE TABLE [dbo].[logs] (
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    [change]      VARCHAR (100) NOT NULL,
+    [datechanged] DATETIME      NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
 CREATE TABLE [dbo].[medicalcertificate] (
     [id]        INT          IDENTITY (1, 1) NOT NULL,
+    [empid]     INT          NULL,
     [imagename] VARCHAR (30) NULL,
     [imageins]  IMAGE        NULL,
     PRIMARY KEY CLUSTERED ([id] ASC)
@@ -94,6 +98,7 @@ CREATE TABLE [dbo].[medicalcertificate] (
 
 CREATE TABLE [dbo].[memorandum] (
     [id]        INT          IDENTITY (1, 1) NOT NULL,
+    [empid]     INT          NULL,
     [imagename] VARCHAR (30) NULL,
     [imageins]  IMAGE        NULL,
     PRIMARY KEY CLUSTERED ([id] ASC)
@@ -101,6 +106,7 @@ CREATE TABLE [dbo].[memorandum] (
 
 CREATE TABLE [dbo].[meritdemerit] (
     [id]        INT          IDENTITY (1, 1) NOT NULL,
+    [empid]     INT          NULL,
     [date]      DATE         NULL,
     [offordno]  VARCHAR (50) NULL,
     [specifics] VARCHAR (50) NULL,
@@ -110,6 +116,7 @@ CREATE TABLE [dbo].[meritdemerit] (
 
 CREATE TABLE [dbo].[performanceEval] (
     [id]        INT          IDENTITY (1, 1) NOT NULL,
+    [empid]     INT          NULL,
     [imagename] VARCHAR (30) NULL,
     [imageins]  IMAGE        NULL,
     PRIMARY KEY CLUSTERED ([id] ASC)
@@ -117,6 +124,7 @@ CREATE TABLE [dbo].[performanceEval] (
 
 CREATE TABLE [dbo].[servicerecords] (
     [id]            INT          IDENTITY (1, 1) NOT NULL,
+    [empid]         INT          NULL,
     [datefrom]      DATE         NULL,
     [dateto]        DATE         NULL,
     [positiontitle] VARCHAR (50) NULL,
@@ -124,9 +132,11 @@ CREATE TABLE [dbo].[servicerecords] (
     PRIMARY KEY CLUSTERED ([id] ASC)
 );
 
-
 create view employechart (employeeClass, Count)
 as
 select employeeclass, COUNT(*)
 from employeeRec where employeeclass IS NOT NULL
 group by employeeclass
+
+
+SELECT e.fname, e.lname, j.empid, j.id, j.imagename FROM drugtestreport j INNER JOIN employeeRec e ON  e.id = j.empid;
