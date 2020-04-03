@@ -15,6 +15,7 @@ namespace ASELCO_201_System
         //private readonly string constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gege\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
         private readonly string constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\NEWERA10\\Documents\\aselcoTwoZeroOne.mdf;Integrated Security=True;Connect Timeout=30";
 
+        private int buttoninc = 0;
         private string fnamedisp;
         private string lnamedisp;
         private string mname;
@@ -242,6 +243,7 @@ namespace ASELCO_201_System
             label60.Visible = false;
             label58.Visible = false;
             label59.Visible = false;
+            dateTimePicker4.Visible = false;
         }
 
         private void StartTimer()
@@ -353,12 +355,11 @@ namespace ASELCO_201_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con.Open();
-
             if (pictureBox6.Image == null)
             {
                 if (comboBox2.Text == "Resigned")
                 {
+                    con.Open();
                     byte[] images = null;
                     //imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
                     imgLocation = "C:\\Users\\newera10\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
@@ -403,6 +404,7 @@ namespace ASELCO_201_System
                 }
                 else if (comboBox2.Text == "Deceased")
                 {
+                    con.Open();
                     byte[] images = null;
                     //imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
                     imgLocation = "C:\\Users\\newera10\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
@@ -447,6 +449,7 @@ namespace ASELCO_201_System
                 }
                 else
                 {
+                    con.Open();
                     byte[] images = null;
                     //imgLocation = "C:\\Users\\gege\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
                     imgLocation = "C:\\Users\\newera10\\source\\repos\\joneeh\\ASELCO-201-System\\profile.png";
@@ -494,6 +497,7 @@ namespace ASELCO_201_System
             {
                 if (comboBox2.Text == "Resigned")
                 {
+                    con.Open();
                     byte[] images = null;
                     FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader brs = new BinaryReader(stream);
@@ -537,6 +541,7 @@ namespace ASELCO_201_System
                 }
                 else if (comboBox2.Text == "Deceased")
                 {
+                    con.Open();
                     byte[] images = null;
                     FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader brs = new BinaryReader(stream);
@@ -579,6 +584,7 @@ namespace ASELCO_201_System
                 }
                 else
                 {
+                    con.Open();
                     byte[] images = null;
                     FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader brs = new BinaryReader(stream);
@@ -644,15 +650,18 @@ namespace ASELCO_201_System
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.CurrentRow.Selected = true;
-            button5.Visible = true;
+           
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
+
+                dataGridView1.CurrentRow.Selected = true;
+                button5.Visible = true;
+
                 int index = e.RowIndex;
                 DataGridViewRow selectedRow = dataGridView1.Rows[index];
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = constring;
+                SqlConnection con1 = new SqlConnection();
+                con1.ConnectionString = constring +"; MultipleActiveResultSets = True;" ;
                 string query = "SELECT id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, profilepic, dateresigned, datedied FROM employeerec WHERE fname = @fname and lname = @lname";
 
                 label14.Text = fnamedisp + " " + mname + " " + lnamedisp;
@@ -672,6 +681,27 @@ namespace ASELCO_201_System
                 pictureBox3.Image = Image2;
 
                 con.Open();
+                SqlCommand cmd3 = new SqlCommand("SELECT j.datefrom, j.dateto, j.positiontitle, j.depareaoff FROM servicerecords j INNER JOIN employeeRec e ON  e.id = j.empid where empid=@empid;", con);
+                cmd3.Parameters.AddWithValue("@empid", label57.Text);
+                DataTable dttbl3 = new DataTable();
+                SqlDataAdapter adapt3 = new SqlDataAdapter(cmd3);
+                adapt3.Fill(dttbl3);
+
+                dataGridView2.DataSource = dttbl3;
+                dataGridView2.AutoGenerateColumns = false;
+                dataGridView2.MultiSelect = false;
+
+                SqlCommand cmd2 = new SqlCommand("SELECT j.date, j.offordno, j.specifics, j.awardpen FROM meritdemerit j INNER JOIN employeeRec e ON  e.id = j.empid where fname=@fname and lname=@lname;", con);
+                cmd2.Parameters.AddWithValue("@fname", selectedRow.Cells[0].FormattedValue.ToString());
+                cmd2.Parameters.AddWithValue("@lname", selectedRow.Cells[1].FormattedValue.ToString());
+                DataTable dttbl2 = new DataTable();
+                SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
+                adapt2.Fill(dttbl2);
+
+                dataGridView3.DataSource = dttbl2;
+                dataGridView3.AutoGenerateColumns = false;
+                dataGridView3.MultiSelect = false;
+
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@fname", selectedRow.Cells[0].FormattedValue.ToString());
                 cmd.Parameters.AddWithValue("@lname", selectedRow.Cells[1].FormattedValue.ToString());
@@ -883,6 +913,168 @@ namespace ASELCO_201_System
             else
             {
                 groupBox4.Visible = false;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into meritdemerit(empid, date, offordno, specifics, awardpen) " +
+                "values(@empid, @date, @offordno, @specifics, @awardpen)", con);
+
+            cmd.Parameters.AddWithValue("@empid", label57.Text);
+            cmd.Parameters.AddWithValue("@date", dateTimePicker5.Value);
+            cmd.Parameters.AddWithValue("@offordno", textBox9.Text);
+            cmd.Parameters.AddWithValue("@specifics", textBox8.Text);
+            cmd.Parameters.AddWithValue("@awardpen", textBox10.Text);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Data Added Successfully!");
+
+            SqlCommand cmd1 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+            cmd1.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been updated by " + Uname + " " + Lname + ".");
+            cmd1.ExecuteNonQuery();
+
+            SqlCommand cmd2 = new SqlCommand("SELECT j.date, j.offordno, j.specifics, j.awardpen FROM meritdemerit j INNER JOIN employeeRec e ON  e.id = j.empid where empid=@empid;", con);
+            cmd2.Parameters.AddWithValue("@empid", label57.Text);
+            DataTable dttbl2 = new DataTable();
+            SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
+            adapt2.Fill(dttbl2);
+
+            dataGridView3.DataSource = dttbl2;
+            dataGridView3.AutoGenerateColumns = false;
+            dataGridView3.MultiSelect = false;
+
+            con.Close();
+        }
+
+        void cleartabtext()
+        {
+            textBox6.Text = textBox7.Text = textBox8.Text = textBox9.Text = textBox10.Text = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dateTimePicker4.Visible == true)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("insert into servicerecords(empid, datefrom, dateto, positiontitle, depareaoff) " +
+                    "values(@empid, @datefrom, @dateto, @positiontitle, @depareaoff)", con);
+
+                cmd.Parameters.AddWithValue("@empid", label57.Text);
+                cmd.Parameters.AddWithValue("@datefrom", dateTimePicker3.Value);
+                cmd.Parameters.AddWithValue("@dateto", dateTimePicker3.Value);
+                cmd.Parameters.AddWithValue("@positiontitle", textBox6.Text);
+                cmd.Parameters.AddWithValue("@depareaoff", textBox7.Text);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Added Successfully!");
+
+                SqlCommand cmd1 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                cmd1.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been updated by " + Uname + " " + Lname + ".");
+                cmd1.ExecuteNonQuery();
+
+                SqlCommand cmd2 = new SqlCommand("SELECT j.datefrom, j.dateto, j.positiontitle, j.depareaoff FROM servicerecords j INNER JOIN employeeRec e ON  e.id = j.empid where empid=@empid;", con);
+                cmd2.Parameters.AddWithValue("@empid", label57.Text);
+                DataTable dttbl2 = new DataTable();
+                SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
+                adapt2.Fill(dttbl2);
+
+                dataGridView2.DataSource = dttbl2;
+                dataGridView2.AutoGenerateColumns = false;
+                dataGridView2.MultiSelect = false;
+                con.Close();
+
+                cleartabtext();
+            }
+            else
+            {
+                if (dataGridView2.Rows.Count == 0)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("insert into servicerecords(empid, datefrom, dateto, positiontitle, depareaoff) " +
+                        "values(@empid, @datefrom, @dateto, @positiontitle, @depareaoff)", con);
+
+                    cmd.Parameters.AddWithValue("@empid", label57.Text);
+                    cmd.Parameters.AddWithValue("@datefrom", dateTimePicker3.Value);
+                    cmd.Parameters.AddWithValue("@dateto", "Present");
+                    cmd.Parameters.AddWithValue("@positiontitle", textBox6.Text);
+                    cmd.Parameters.AddWithValue("@depareaoff", textBox7.Text);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Data Added Successfully!");
+
+                    SqlCommand cmd1 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                    cmd1.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been updated by " + Uname + " " + Lname + ".");
+                    cmd1.ExecuteNonQuery();
+
+                    SqlCommand cmd2 = new SqlCommand("SELECT j.datefrom, j.dateto, j.positiontitle, j.depareaoff FROM servicerecords j INNER JOIN employeeRec e ON  e.id = j.empid where empid=@empid;", con);
+                    cmd2.Parameters.AddWithValue("@empid", label57.Text);
+                    DataTable dttbl2 = new DataTable();
+                    SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
+                    adapt2.Fill(dttbl2);
+
+                    dataGridView2.DataSource = dttbl2;
+                    dataGridView2.AutoGenerateColumns = false;
+                    dataGridView2.MultiSelect = false;
+                    con.Close();
+
+                    cleartabtext();
+                }
+                else
+                {
+                    con.Open();
+
+                    SqlCommand cmd4 = new SqlCommand("update servicerecords set dateto=@dateto where empid=@empid and dateto='Present';", con);
+
+                    cmd4.Parameters.AddWithValue("@empid", label57.Text);
+                    cmd4.Parameters.AddWithValue("@dateto", dateTimePicker3.Value);
+                    cmd4.ExecuteNonQuery();
+
+                    SqlCommand cmd = new SqlCommand("insert into servicerecords(empid, datefrom, dateto, positiontitle, depareaoff) " +
+                        "values(@empid, @datefrom, @dateto, @positiontitle, @depareaoff)", con);
+
+                    cmd.Parameters.AddWithValue("@empid", label57.Text);
+                    cmd.Parameters.AddWithValue("@datefrom", dateTimePicker3.Value);
+                    cmd.Parameters.AddWithValue("@dateto", "Present");
+                    cmd.Parameters.AddWithValue("@positiontitle", textBox6.Text);
+                    cmd.Parameters.AddWithValue("@depareaoff", textBox7.Text);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Data Added Successfully!");
+
+                    SqlCommand cmd1 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+                    cmd1.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been updated by " + Uname + " " + Lname + ".");
+                    cmd1.ExecuteNonQuery();
+
+                    SqlCommand cmd2 = new SqlCommand("SELECT j.datefrom, j.dateto, j.positiontitle, j.depareaoff FROM servicerecords j INNER JOIN employeeRec e ON  e.id = j.empid where empid=@empid;", con);
+                    cmd2.Parameters.AddWithValue("@empid", label57.Text);
+                    DataTable dttbl2 = new DataTable();
+                    SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
+                    adapt2.Fill(dttbl2);
+
+                    dataGridView2.DataSource = dttbl2;
+                    dataGridView2.AutoGenerateColumns = false;
+                    dataGridView2.MultiSelect = false;
+                    con.Close();
+
+                    cleartabtext();
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            buttoninc++;
+
+            if (buttoninc%2 == 1)
+            {
+                button6.Location = new Point(245, 22);
+                dateTimePicker4.Visible = true;
+            }
+            else if (buttoninc % 2 == 0)
+            {
+                button6.Location = new Point(301, 22);
+                dateTimePicker4.Visible = false;
             }
         }
     }
