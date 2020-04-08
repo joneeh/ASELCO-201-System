@@ -1068,14 +1068,23 @@ namespace ASELCO_201_System
 
             if (buttoninc%2 == 1)
             {
-                button6.Location = new Point(245, 22);
+                button6.Text = "Cancel";
+                button6.Location = new Point(69, 38);
                 dateTimePicker4.Visible = true;
+                label18.Visible = false;
             }
             else if (buttoninc % 2 == 0)
             {
-                button6.Location = new Point(301, 22);
+                button6.Text = "Add Date";
+                button6.Location = new Point(163, 38);
                 dateTimePicker4.Visible = false;
+                label18.Visible = true;
             }
+        }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

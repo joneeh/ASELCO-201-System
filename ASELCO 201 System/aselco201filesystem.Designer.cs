@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Aselco201filesystem));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea30 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend30 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,8 +136,27 @@
             this.tabPage35 = new System.Windows.Forms.TabPage();
             this.tabPage36 = new System.Windows.Forms.TabPage();
             this.tabPage37 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage38 = new System.Windows.Forms.TabPage();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label60 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
@@ -169,25 +188,20 @@
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateHired1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label18 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.dataGridView10 = new System.Windows.Forms.DataGridView();
+            this.dataGridView11 = new System.Windows.Forms.DataGridView();
+            this.dataGridView12 = new System.Windows.Forms.DataGridView();
+            this.dataGridView13 = new System.Windows.Forms.DataGridView();
+            this.dataGridView14 = new System.Windows.Forms.DataGridView();
+            this.dataGridView15 = new System.Windows.Forms.DataGridView();
+            this.dataGridView16 = new System.Windows.Forms.DataGridView();
+            this.dataGridView17 = new System.Windows.Forms.DataGridView();
+            this.dataGridView18 = new System.Windows.Forms.DataGridView();
+            this.dataGridView19 = new System.Windows.Forms.DataGridView();
+            this.dataGridView20 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.addemployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -202,8 +216,22 @@
             this.tabControl5.SuspendLayout();
             this.tabPage11.SuspendLayout();
             this.tabControl6.SuspendLayout();
+            this.tabPage12.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.tabPage14.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.tabControl7.SuspendLayout();
+            this.tabPage16.SuspendLayout();
+            this.tabPage27.SuspendLayout();
+            this.tabPage28.SuspendLayout();
+            this.tabPage29.SuspendLayout();
+            this.tabPage30.SuspendLayout();
+            this.tabPage31.SuspendLayout();
+            this.tabPage32.SuspendLayout();
+            this.tabPage33.SuspendLayout();
+            this.tabPage34.SuspendLayout();
+            this.tabPage35.SuspendLayout();
+            this.tabPage36.SuspendLayout();
             this.tabPage37.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage38.SuspendLayout();
@@ -217,6 +245,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView20)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1240,6 +1282,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.dataGridView7);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
@@ -1250,6 +1293,7 @@
             // 
             // tabPage13
             // 
+            this.tabPage13.Controls.Add(this.dataGridView8);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
@@ -1260,6 +1304,7 @@
             // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.dataGridView9);
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Size = new System.Drawing.Size(1077, 140);
@@ -1292,6 +1337,7 @@
             // 
             // tabPage16
             // 
+            this.tabPage16.Controls.Add(this.dataGridView10);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
@@ -1302,6 +1348,7 @@
             // 
             // tabPage27
             // 
+            this.tabPage27.Controls.Add(this.dataGridView11);
             this.tabPage27.Location = new System.Drawing.Point(4, 22);
             this.tabPage27.Name = "tabPage27";
             this.tabPage27.Padding = new System.Windows.Forms.Padding(3);
@@ -1312,6 +1359,7 @@
             // 
             // tabPage28
             // 
+            this.tabPage28.Controls.Add(this.dataGridView12);
             this.tabPage28.Location = new System.Drawing.Point(4, 22);
             this.tabPage28.Name = "tabPage28";
             this.tabPage28.Size = new System.Drawing.Size(1077, 145);
@@ -1321,6 +1369,7 @@
             // 
             // tabPage29
             // 
+            this.tabPage29.Controls.Add(this.dataGridView13);
             this.tabPage29.Location = new System.Drawing.Point(4, 22);
             this.tabPage29.Name = "tabPage29";
             this.tabPage29.Size = new System.Drawing.Size(1077, 145);
@@ -1330,6 +1379,7 @@
             // 
             // tabPage30
             // 
+            this.tabPage30.Controls.Add(this.dataGridView14);
             this.tabPage30.Location = new System.Drawing.Point(4, 22);
             this.tabPage30.Name = "tabPage30";
             this.tabPage30.Padding = new System.Windows.Forms.Padding(3);
@@ -1340,6 +1390,7 @@
             // 
             // tabPage31
             // 
+            this.tabPage31.Controls.Add(this.dataGridView15);
             this.tabPage31.Location = new System.Drawing.Point(4, 22);
             this.tabPage31.Name = "tabPage31";
             this.tabPage31.Size = new System.Drawing.Size(1081, 156);
@@ -1349,6 +1400,7 @@
             // 
             // tabPage32
             // 
+            this.tabPage32.Controls.Add(this.dataGridView16);
             this.tabPage32.Location = new System.Drawing.Point(4, 22);
             this.tabPage32.Name = "tabPage32";
             this.tabPage32.Size = new System.Drawing.Size(1081, 156);
@@ -1358,6 +1410,7 @@
             // 
             // tabPage33
             // 
+            this.tabPage33.Controls.Add(this.dataGridView17);
             this.tabPage33.Location = new System.Drawing.Point(4, 22);
             this.tabPage33.Name = "tabPage33";
             this.tabPage33.Size = new System.Drawing.Size(1081, 156);
@@ -1367,6 +1420,7 @@
             // 
             // tabPage34
             // 
+            this.tabPage34.Controls.Add(this.dataGridView18);
             this.tabPage34.Location = new System.Drawing.Point(4, 22);
             this.tabPage34.Name = "tabPage34";
             this.tabPage34.Size = new System.Drawing.Size(1081, 156);
@@ -1376,6 +1430,7 @@
             // 
             // tabPage35
             // 
+            this.tabPage35.Controls.Add(this.dataGridView19);
             this.tabPage35.Location = new System.Drawing.Point(4, 22);
             this.tabPage35.Name = "tabPage35";
             this.tabPage35.Size = new System.Drawing.Size(1081, 156);
@@ -1385,6 +1440,7 @@
             // 
             // tabPage36
             // 
+            this.tabPage36.Controls.Add(this.dataGridView20);
             this.tabPage36.Location = new System.Drawing.Point(4, 22);
             this.tabPage36.Name = "tabPage36";
             this.tabPage36.Size = new System.Drawing.Size(1081, 156);
@@ -1412,6 +1468,94 @@
             this.tabPage37.Text = "Service Records";
             this.tabPage37.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(163, 38);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 23);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Add Date";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CustomFormat = "";
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker4.Location = new System.Drawing.Point(163, 40);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(128, 20);
+            this.dateTimePicker4.TabIndex = 18;
+            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(140, 42);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(22, 13);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "TO";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(217, 126);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Add";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(163, 101);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(128, 20);
+            this.textBox7.TabIndex = 12;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(163, 71);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(128, 20);
+            this.textBox6.TabIndex = 11;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(0, 105);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(162, 13);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "DEPARTMENT / AREA OFFICE";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(71, 74);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(91, 13);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "POSITION TITLE";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(163, 10);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(128, 20);
+            this.dateTimePicker3.TabIndex = 8;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(123, 13);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 13);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "FROM";
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -1421,9 +1565,9 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView2.Location = new System.Drawing.Point(315, 8);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView2.Size = new System.Drawing.Size(742, 145);
             this.dataGridView2.TabIndex = 3;
             // 
             // tabPage38
@@ -1445,6 +1589,81 @@
             this.tabPage38.Text = "Merits/Demerits";
             this.tabPage38.UseVisualStyleBackColor = true;
             // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(163, 101);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(128, 20);
+            this.textBox10.TabIndex = 17;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(47, 104);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(115, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "AWARDS / PENALTY";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(163, 71);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(128, 20);
+            this.textBox8.TabIndex = 14;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(163, 40);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(128, 20);
+            this.textBox9.TabIndex = 13;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(101, 74);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(61, 13);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "SPECIFICS";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(10, 43);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(152, 13);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "MEMO / OFFICE ORDER NO.";
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker5.Location = new System.Drawing.Point(163, 10);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(128, 20);
+            this.dateTimePicker5.TabIndex = 10;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(126, 13);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(36, 13);
+            this.label24.TabIndex = 9;
+            this.label24.Text = "DATE";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(217, 126);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
@@ -1454,9 +1673,9 @@
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView3.Location = new System.Drawing.Point(315, 8);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView3.Size = new System.Drawing.Size(742, 145);
             this.dataGridView3.TabIndex = 5;
             // 
             // label60
@@ -1615,29 +1834,29 @@
             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.chart1.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
             this.chart1.BorderlineWidth = 5;
-            chartArea30.AxisX.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea30.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea30.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
-            chartArea30.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea30.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
-            chartArea30.AxisY.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea30.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea30.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
-            chartArea30.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea30.BorderColor = System.Drawing.Color.Gainsboro;
-            chartArea30.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea30);
-            legend30.Name = "Legend1";
-            this.chart1.Legends.Add(legend30);
+            chartArea13.AxisX.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea13.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea13.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea13.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea13.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea13.AxisY.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea13.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea13.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea13.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea13.BorderColor = System.Drawing.Color.Gainsboro;
+            chartArea13.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea13);
+            legend13.Name = "Legend1";
+            this.chart1.Legends.Add(legend13);
             this.chart1.Location = new System.Drawing.Point(497, 12);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series30.Color = System.Drawing.Color.ForestGreen;
-            series30.Legend = "Legend1";
-            series30.Name = "Number of Employee per Class";
-            this.chart1.Series.Add(series30);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series13.Color = System.Drawing.Color.ForestGreen;
+            series13.Legend = "Legend1";
+            series13.Name = "Number of Employee per Class";
+            this.chart1.Series.Add(series13);
             this.chart1.Size = new System.Drawing.Size(571, 143);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
@@ -1820,166 +2039,201 @@
             this.dateHired1.Name = "dateHired1";
             this.dateHired1.ReadOnly = true;
             // 
-            // textBox10
+            // dataGridView7
             // 
-            this.textBox10.Location = new System.Drawing.Point(739, 24);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(227, 20);
-            this.textBox10.TabIndex = 17;
+            this.dataGridView7.AllowUserToAddRows = false;
+            this.dataGridView7.AllowUserToDeleteRows = false;
+            this.dataGridView7.AllowUserToResizeColumns = false;
+            this.dataGridView7.AllowUserToResizeRows = false;
+            this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView7.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(17, 29);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView7.TabIndex = 4;
             // 
-            // label20
+            // dataGridView8
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(802, 8);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(115, 13);
-            this.label20.TabIndex = 16;
-            this.label20.Text = "AWARDS / PENALTY";
+            this.dataGridView8.AllowUserToAddRows = false;
+            this.dataGridView8.AllowUserToDeleteRows = false;
+            this.dataGridView8.AllowUserToResizeColumns = false;
+            this.dataGridView8.AllowUserToResizeRows = false;
+            this.dataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView8.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(17, 29);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView8.TabIndex = 5;
             // 
-            // textBox8
+            // dataGridView9
             // 
-            this.textBox8.Location = new System.Drawing.Point(485, 24);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(227, 20);
-            this.textBox8.TabIndex = 14;
+            this.dataGridView9.AllowUserToAddRows = false;
+            this.dataGridView9.AllowUserToDeleteRows = false;
+            this.dataGridView9.AllowUserToResizeColumns = false;
+            this.dataGridView9.AllowUserToResizeRows = false;
+            this.dataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView9.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Location = new System.Drawing.Point(17, 29);
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView9.TabIndex = 5;
             // 
-            // textBox9
+            // dataGridView10
             // 
-            this.textBox9.Location = new System.Drawing.Point(238, 24);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(227, 20);
-            this.textBox9.TabIndex = 13;
+            this.dataGridView10.AllowUserToAddRows = false;
+            this.dataGridView10.AllowUserToDeleteRows = false;
+            this.dataGridView10.AllowUserToResizeColumns = false;
+            this.dataGridView10.AllowUserToResizeRows = false;
+            this.dataGridView10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView10.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView10.Location = new System.Drawing.Point(17, 29);
+            this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView10.TabIndex = 5;
             // 
-            // label22
+            // dataGridView11
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(560, 8);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(61, 13);
-            this.label22.TabIndex = 12;
-            this.label22.Text = "SPECIFICS";
+            this.dataGridView11.AllowUserToAddRows = false;
+            this.dataGridView11.AllowUserToDeleteRows = false;
+            this.dataGridView11.AllowUserToResizeColumns = false;
+            this.dataGridView11.AllowUserToResizeRows = false;
+            this.dataGridView11.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView11.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView11.Location = new System.Drawing.Point(17, 29);
+            this.dataGridView11.Name = "dataGridView11";
+            this.dataGridView11.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView11.TabIndex = 6;
             // 
-            // label23
+            // dataGridView12
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(281, 8);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(152, 13);
-            this.label23.TabIndex = 11;
-            this.label23.Text = "MEMO / OFFICE ORDER NO.";
+            this.dataGridView12.AllowUserToAddRows = false;
+            this.dataGridView12.AllowUserToDeleteRows = false;
+            this.dataGridView12.AllowUserToResizeColumns = false;
+            this.dataGridView12.AllowUserToResizeRows = false;
+            this.dataGridView12.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView12.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView12.Location = new System.Drawing.Point(17, 29);
+            this.dataGridView12.Name = "dataGridView12";
+            this.dataGridView12.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView12.TabIndex = 7;
             // 
-            // dateTimePicker5
+            // dataGridView13
             // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(19, 24);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker5.TabIndex = 10;
+            this.dataGridView13.AllowUserToAddRows = false;
+            this.dataGridView13.AllowUserToDeleteRows = false;
+            this.dataGridView13.AllowUserToResizeColumns = false;
+            this.dataGridView13.AllowUserToResizeRows = false;
+            this.dataGridView13.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView13.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView13.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView13.Location = new System.Drawing.Point(17, 29);
+            this.dataGridView13.Name = "dataGridView13";
+            this.dataGridView13.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView13.TabIndex = 7;
             // 
-            // label24
+            // dataGridView14
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(92, 8);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(36, 13);
-            this.label24.TabIndex = 9;
-            this.label24.Text = "DATE";
+            this.dataGridView14.AllowUserToAddRows = false;
+            this.dataGridView14.AllowUserToDeleteRows = false;
+            this.dataGridView14.AllowUserToResizeColumns = false;
+            this.dataGridView14.AllowUserToResizeRows = false;
+            this.dataGridView14.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView14.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView14.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView14.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView14.Name = "dataGridView14";
+            this.dataGridView14.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView14.TabIndex = 7;
             // 
-            // button3
+            // dataGridView15
             // 
-            this.button3.Location = new System.Drawing.Point(982, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.dataGridView15.AllowUserToAddRows = false;
+            this.dataGridView15.AllowUserToDeleteRows = false;
+            this.dataGridView15.AllowUserToResizeColumns = false;
+            this.dataGridView15.AllowUserToResizeRows = false;
+            this.dataGridView15.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView15.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView15.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView15.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView15.Name = "dataGridView15";
+            this.dataGridView15.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView15.TabIndex = 7;
             // 
-            // textBox7
+            // dataGridView16
             // 
-            this.textBox7.Location = new System.Drawing.Point(733, 24);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(227, 20);
-            this.textBox7.TabIndex = 12;
+            this.dataGridView16.AllowUserToAddRows = false;
+            this.dataGridView16.AllowUserToDeleteRows = false;
+            this.dataGridView16.AllowUserToResizeColumns = false;
+            this.dataGridView16.AllowUserToResizeRows = false;
+            this.dataGridView16.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView16.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView16.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView16.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView16.Name = "dataGridView16";
+            this.dataGridView16.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView16.TabIndex = 7;
             // 
-            // textBox6
+            // dataGridView17
             // 
-            this.textBox6.Location = new System.Drawing.Point(477, 24);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(227, 20);
-            this.textBox6.TabIndex = 11;
+            this.dataGridView17.AllowUserToAddRows = false;
+            this.dataGridView17.AllowUserToDeleteRows = false;
+            this.dataGridView17.AllowUserToResizeColumns = false;
+            this.dataGridView17.AllowUserToResizeRows = false;
+            this.dataGridView17.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView17.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView17.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView17.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView17.Name = "dataGridView17";
+            this.dataGridView17.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView17.TabIndex = 7;
             // 
-            // label17
+            // dataGridView18
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(772, 8);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(162, 13);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "DEPARTMENT / AREA OFFICE";
+            this.dataGridView18.AllowUserToAddRows = false;
+            this.dataGridView18.AllowUserToDeleteRows = false;
+            this.dataGridView18.AllowUserToResizeColumns = false;
+            this.dataGridView18.AllowUserToResizeRows = false;
+            this.dataGridView18.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView18.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView18.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView18.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView18.Name = "dataGridView18";
+            this.dataGridView18.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView18.TabIndex = 7;
             // 
-            // label16
+            // dataGridView19
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(547, 8);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(91, 13);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "POSITION TITLE";
+            this.dataGridView19.AllowUserToAddRows = false;
+            this.dataGridView19.AllowUserToDeleteRows = false;
+            this.dataGridView19.AllowUserToResizeColumns = false;
+            this.dataGridView19.AllowUserToResizeRows = false;
+            this.dataGridView19.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView19.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView19.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView19.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView19.Name = "dataGridView19";
+            this.dataGridView19.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView19.TabIndex = 7;
             // 
-            // dateTimePicker3
+            // dataGridView20
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(19, 24);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 8;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(91, 8);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(38, 13);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "FROM";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(982, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.CustomFormat = "";
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(335, 24);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(114, 20);
-            this.dateTimePicker4.TabIndex = 18;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(333, 8);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(22, 13);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "TO";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(301, 22);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 23);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Add Date";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.dataGridView20.AllowUserToAddRows = false;
+            this.dataGridView20.AllowUserToDeleteRows = false;
+            this.dataGridView20.AllowUserToResizeColumns = false;
+            this.dataGridView20.AllowUserToResizeRows = false;
+            this.dataGridView20.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView20.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView20.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView20.Location = new System.Drawing.Point(17, 51);
+            this.dataGridView20.Name = "dataGridView20";
+            this.dataGridView20.Size = new System.Drawing.Size(1040, 102);
+            this.dataGridView20.TabIndex = 7;
             // 
             // Aselco201filesystem
             // 
@@ -2021,8 +2275,22 @@
             this.tabControl5.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
             this.tabControl6.ResumeLayout(false);
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage13.ResumeLayout(false);
+            this.tabPage14.ResumeLayout(false);
             this.tabPage15.ResumeLayout(false);
             this.tabControl7.ResumeLayout(false);
+            this.tabPage16.ResumeLayout(false);
+            this.tabPage27.ResumeLayout(false);
+            this.tabPage28.ResumeLayout(false);
+            this.tabPage29.ResumeLayout(false);
+            this.tabPage30.ResumeLayout(false);
+            this.tabPage31.ResumeLayout(false);
+            this.tabPage32.ResumeLayout(false);
+            this.tabPage33.ResumeLayout(false);
+            this.tabPage34.ResumeLayout(false);
+            this.tabPage35.ResumeLayout(false);
+            this.tabPage36.ResumeLayout(false);
             this.tabPage37.ResumeLayout(false);
             this.tabPage37.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -2040,6 +2308,20 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView20)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2202,5 +2484,19 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridView dataGridView9;
+        private System.Windows.Forms.DataGridView dataGridView10;
+        private System.Windows.Forms.DataGridView dataGridView11;
+        private System.Windows.Forms.DataGridView dataGridView12;
+        private System.Windows.Forms.DataGridView dataGridView13;
+        private System.Windows.Forms.DataGridView dataGridView14;
+        private System.Windows.Forms.DataGridView dataGridView15;
+        private System.Windows.Forms.DataGridView dataGridView16;
+        private System.Windows.Forms.DataGridView dataGridView17;
+        private System.Windows.Forms.DataGridView dataGridView18;
+        private System.Windows.Forms.DataGridView dataGridView19;
+        private System.Windows.Forms.DataGridView dataGridView20;
     }
 }
