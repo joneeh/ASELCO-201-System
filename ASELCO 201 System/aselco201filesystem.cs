@@ -134,7 +134,6 @@ namespace ASELCO_201_System
             listviewloadd();
 
             hidepanels();
-
         }
 
         void listviewloadd()
@@ -244,6 +243,7 @@ namespace ASELCO_201_System
             label58.Visible = false;
             label59.Visible = false;
             dateTimePicker4.Visible = false;
+            button7.Visible = false;
         }
 
         private void StartTimer()
@@ -691,12 +691,24 @@ namespace ASELCO_201_System
                 dataGridView2.AutoGenerateColumns = false;
                 dataGridView2.MultiSelect = false;
 
+
+                SqlCommand cmd6 = new SqlCommand("SELECT birthcertificate FROM employeerec where id=@empid;", con);
+                cmd6.Parameters.AddWithValue("@empid", label57.Text);
+                DataTable dttbl6 = new DataTable();
+                SqlDataAdapter adapt6 = new SqlDataAdapter(cmd6);
+                adapt6.Fill(dttbl6);
+
+                dataGridView7.DataSource = dttbl6;
+                dataGridView7.AutoGenerateColumns = false;
+                dataGridView7.MultiSelect = false;
+
                 SqlCommand cmd2 = new SqlCommand("SELECT j.date, j.offordno, j.specifics, j.awardpen FROM meritdemerit j INNER JOIN employeeRec e ON  e.id = j.empid where fname=@fname and lname=@lname;", con);
                 cmd2.Parameters.AddWithValue("@fname", selectedRow.Cells[0].FormattedValue.ToString());
                 cmd2.Parameters.AddWithValue("@lname", selectedRow.Cells[1].FormattedValue.ToString());
                 DataTable dttbl2 = new DataTable();
                 SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
                 adapt2.Fill(dttbl2);
+
 
                 dataGridView3.DataSource = dttbl2;
                 dataGridView3.AutoGenerateColumns = false;
@@ -1082,9 +1094,57 @@ namespace ASELCO_201_System
             }
         }
 
-        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
+            con.Open();
+            byte[] images = null;
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(stream);
 
+            images = brs.ReadBytes((int)stream.Length);
+            SqlCommand cmd = new SqlCommand("update employeeRec set birthcertificate=@birthcertificate where id=@empid", con);
+
+            var date = DateTime.Now;
+            cmd.Parameters.AddWithValue("@birthcertificate", images);
+            cmd.Parameters.AddWithValue("@empid", label57.Text);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Added User Successfully!");
+
+            SqlCommand cmd5 = new SqlCommand("insert into logs(change, datechanged) values(@user, CURRENT_TIMESTAMP);", con);
+            cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
+            cmd5.ExecuteNonQuery();
+
+            SqlCommand cmd2 = new SqlCommand("SELECT birthcertificate FROM employeerec where id=@empid;", con);
+            cmd2.Parameters.AddWithValue("@empid", label57.Text);
+            DataTable dttbl2 = new DataTable();
+            SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
+            adapt2.Fill(dttbl2);
+
+            dataGridView7.DataSource = dttbl2;
+            dataGridView7.AutoGenerateColumns = false;
+            dataGridView7.MultiSelect = false;
+            con.Close();
+
+            con.Close();
+            clear();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog diaglog = new OpenFileDialog();
+            diaglog.Filter = "image files|*.jpg;*.png;*.gif;*.icon;.*;";
+            if (diaglog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = diaglog.FileName.ToString();
+                pictureBox7.ImageLocation = imgLocation;
+                button7.Visible = true;
+            }
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView3.Columns[e.ColumnIndex].Name == "Delete")
+            { }
         }
     }
 }
