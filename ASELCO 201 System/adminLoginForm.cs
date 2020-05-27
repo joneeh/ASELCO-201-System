@@ -107,6 +107,7 @@ namespace ASELCO_201_System
                 password.Text = "";
                 password.Focus();
             }
+            con.Close();
         }
 
         private void username_TextChanged(object sender, EventArgs e)

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Aselco201filesystem));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,16 +118,15 @@
             this.searchemployee = new System.Windows.Forms.Panel();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.tabControl6 = new System.Windows.Forms.TabControl();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.button8 = new System.Windows.Forms.Button();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.button9 = new System.Windows.Forms.Button();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.imageins = new System.Windows.Forms.DataGridViewImageColumn();
+            this.certificatetype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateadded = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.tabControl7 = new System.Windows.Forms.TabControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
@@ -168,6 +167,11 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.datefrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.positiontitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depareaoff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage38 = new System.Windows.Forms.TabPage();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -179,6 +183,11 @@
             this.label24 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.offordno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Specifics = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AwardPenalty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label60 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
@@ -209,20 +218,6 @@
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateHired1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button14 = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.birthcertificate = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.offordno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Specifics = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AwardPenalty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.datefrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.positiontitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.depareaoff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             this.addemployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -236,13 +231,8 @@
             this.searchemployee.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.tabPage11.SuspendLayout();
-            this.tabControl6.SuspendLayout();
-            this.tabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            this.tabPage13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
-            this.tabPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
             this.tabPage15.SuspendLayout();
             this.tabControl7.SuspendLayout();
             this.tabPage16.SuspendLayout();
@@ -280,7 +270,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1282,7 +1271,12 @@
             // 
             // tabPage11
             // 
-            this.tabPage11.Controls.Add(this.tabControl6);
+            this.tabPage11.Controls.Add(this.label19);
+            this.tabPage11.Controls.Add(this.comboBox5);
+            this.tabPage11.Controls.Add(this.button14);
+            this.tabPage11.Controls.Add(this.pictureBox7);
+            this.tabPage11.Controls.Add(this.button7);
+            this.tabPage11.Controls.Add(this.dataGridView7);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
@@ -1291,37 +1285,55 @@
             this.tabPage11.Text = "Certificates";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
-            // tabControl6
+            // label19
             // 
-            this.tabControl6.Controls.Add(this.tabPage12);
-            this.tabControl6.Controls.Add(this.tabPage13);
-            this.tabControl6.Controls.Add(this.tabPage14);
-            this.tabControl6.Location = new System.Drawing.Point(-1, 0);
-            this.tabControl6.Name = "tabControl6";
-            this.tabControl6.SelectedIndex = 0;
-            this.tabControl6.Size = new System.Drawing.Size(1085, 166);
-            this.tabControl6.TabIndex = 0;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(126, 57);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(81, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Certificate Type";
             // 
-            // tabPage12
+            // comboBox5
             // 
-            this.tabPage12.Controls.Add(this.button14);
-            this.tabPage12.Controls.Add(this.pictureBox7);
-            this.tabPage12.Controls.Add(this.button7);
-            this.tabPage12.Controls.Add(this.dataGridView7);
-            this.tabPage12.Location = new System.Drawing.Point(4, 22);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage12.TabIndex = 0;
-            this.tabPage12.Text = "Birth Certificate";
-            this.tabPage12.UseVisualStyleBackColor = true;
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Birth Certificate",
+            "Marriage Certificate",
+            "Medical Certificate"});
+            this.comboBox5.Location = new System.Drawing.Point(86, 73);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 24);
+            this.comboBox5.TabIndex = 13;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(86, 23);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(121, 23);
+            this.button14.TabIndex = 11;
+            this.button14.Text = "Insert Certificate";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(223, 8);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(112, 139);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 12;
+            this.pictureBox7.TabStop = false;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(117, 112);
+            this.button7.Location = new System.Drawing.Point(132, 121);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 5;
+            this.button7.TabIndex = 10;
             this.button7.Text = "Add";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -1332,87 +1344,39 @@
             this.dataGridView7.AllowUserToDeleteRows = false;
             this.dataGridView7.AllowUserToResizeColumns = false;
             this.dataGridView7.AllowUserToResizeRows = false;
+            this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.birthcertificate,
-            this.Delete});
-            this.dataGridView7.Location = new System.Drawing.Point(198, 8);
+            this.imageins,
+            this.certificatetype,
+            this.dateadded});
+            this.dataGridView7.Location = new System.Drawing.Point(356, 6);
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.RowHeadersVisible = false;
-            this.dataGridView7.RowTemplate.Height = 50;
+            this.dataGridView7.RowTemplate.Height = 20;
             this.dataGridView7.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView7.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView7.Size = new System.Drawing.Size(420, 123);
-            this.dataGridView7.TabIndex = 4;
+            this.dataGridView7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView7.Size = new System.Drawing.Size(619, 146);
+            this.dataGridView7.TabIndex = 9;
             // 
-            // tabPage13
+            // imageins
             // 
-            this.tabPage13.Controls.Add(this.button8);
-            this.tabPage13.Controls.Add(this.dataGridView8);
-            this.tabPage13.Location = new System.Drawing.Point(4, 22);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage13.TabIndex = 1;
-            this.tabPage13.Text = "Marriage Certificate";
-            this.tabPage13.UseVisualStyleBackColor = true;
+            this.imageins.DataPropertyName = "imageins";
+            this.imageins.HeaderText = "Certificate ";
+            this.imageins.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imageins.Name = "imageins";
             // 
-            // button8
+            // certificatetype
             // 
-            this.button8.Location = new System.Drawing.Point(14, 9);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Add";
-            this.button8.UseVisualStyleBackColor = true;
+            this.certificatetype.DataPropertyName = "certificatetype";
+            this.certificatetype.HeaderText = "Certificate Type";
+            this.certificatetype.Name = "certificatetype";
             // 
-            // dataGridView8
+            // dateadded
             // 
-            this.dataGridView8.AllowUserToAddRows = false;
-            this.dataGridView8.AllowUserToDeleteRows = false;
-            this.dataGridView8.AllowUserToResizeColumns = false;
-            this.dataGridView8.AllowUserToResizeRows = false;
-            this.dataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView8.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(107, 8);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.Size = new System.Drawing.Size(964, 123);
-            this.dataGridView8.TabIndex = 5;
-            // 
-            // tabPage14
-            // 
-            this.tabPage14.Controls.Add(this.button9);
-            this.tabPage14.Controls.Add(this.dataGridView9);
-            this.tabPage14.Location = new System.Drawing.Point(4, 22);
-            this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(1077, 140);
-            this.tabPage14.TabIndex = 2;
-            this.tabPage14.Text = "Medical Certificate";
-            this.tabPage14.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(14, 9);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Add";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView9
-            // 
-            this.dataGridView9.AllowUserToAddRows = false;
-            this.dataGridView9.AllowUserToDeleteRows = false;
-            this.dataGridView9.AllowUserToResizeColumns = false;
-            this.dataGridView9.AllowUserToResizeRows = false;
-            this.dataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView9.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(107, 8);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.Size = new System.Drawing.Size(964, 123);
-            this.dataGridView9.TabIndex = 5;
+            this.dateadded.DataPropertyName = "dateadded";
+            this.dateadded.HeaderText = "Date Added";
+            this.dateadded.Name = "dateadded";
             // 
             // tabPage15
             // 
@@ -1871,6 +1835,39 @@
             this.dataGridView2.Size = new System.Drawing.Size(760, 145);
             this.dataGridView2.TabIndex = 3;
             // 
+            // datefrom
+            // 
+            this.datefrom.DataPropertyName = "datefrom";
+            this.datefrom.HeaderText = "Date From";
+            this.datefrom.Name = "datefrom";
+            // 
+            // dateto
+            // 
+            this.dateto.DataPropertyName = "dateto";
+            this.dateto.HeaderText = "Date To";
+            this.dateto.Name = "dateto";
+            // 
+            // positiontitle
+            // 
+            this.positiontitle.DataPropertyName = "positiontitle";
+            this.positiontitle.HeaderText = "Position Title";
+            this.positiontitle.Name = "positiontitle";
+            // 
+            // depareaoff
+            // 
+            this.depareaoff.DataPropertyName = "depareaoff";
+            this.depareaoff.HeaderText = "Department / Area Office";
+            this.depareaoff.Name = "depareaoff";
+            // 
+            // Delete2
+            // 
+            this.Delete2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Delete2.HeaderText = "";
+            this.Delete2.Name = "Delete2";
+            this.Delete2.Text = "Remove";
+            this.Delete2.UseColumnTextForButtonValue = true;
+            this.Delete2.Width = 70;
+            // 
             // tabPage38
             // 
             this.tabPage38.Controls.Add(this.textBox10);
@@ -1985,6 +1982,44 @@
             this.dataGridView3.Size = new System.Drawing.Size(760, 145);
             this.dataGridView3.TabIndex = 5;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.FillWeight = 12.69035F;
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            // 
+            // offordno
+            // 
+            this.offordno.DataPropertyName = "offordno";
+            this.offordno.FillWeight = 12.69035F;
+            this.offordno.HeaderText = "Office Order Number";
+            this.offordno.Name = "offordno";
+            // 
+            // Specifics
+            // 
+            this.Specifics.DataPropertyName = "specifics";
+            this.Specifics.FillWeight = 12.69035F;
+            this.Specifics.HeaderText = "Specifics";
+            this.Specifics.Name = "Specifics";
+            // 
+            // AwardPenalty
+            // 
+            this.AwardPenalty.DataPropertyName = "awardpen";
+            this.AwardPenalty.FillWeight = 12.69035F;
+            this.AwardPenalty.HeaderText = "Award Penalty";
+            this.AwardPenalty.Name = "AwardPenalty";
+            // 
+            // Delete1
+            // 
+            this.Delete1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Delete1.FillWeight = 70F;
+            this.Delete1.HeaderText = "";
+            this.Delete1.Name = "Delete1";
+            this.Delete1.Text = "Remove";
+            this.Delete1.UseColumnTextForButtonValue = true;
+            this.Delete1.Width = 70;
             // 
             // label60
             // 
@@ -2142,29 +2177,29 @@
             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.chart1.BorderlineColor = System.Drawing.SystemColors.ActiveBorder;
             this.chart1.BorderlineWidth = 5;
-            chartArea11.AxisX.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea11.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea11.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
-            chartArea11.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea11.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
-            chartArea11.AxisY.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea11.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea11.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
-            chartArea11.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea11.BorderColor = System.Drawing.Color.Gainsboro;
-            chartArea11.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chart1.Legends.Add(legend11);
+            chartArea4.AxisX.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea4.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea4.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea4.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea4.AxisY.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea4.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DarkGray;
+            chartArea4.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea4.BorderColor = System.Drawing.Color.Gainsboro;
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(497, 12);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series11.Color = System.Drawing.Color.ForestGreen;
-            series11.Legend = "Legend1";
-            series11.Name = "Number of Employee per Class";
-            this.chart1.Series.Add(series11);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.Color = System.Drawing.Color.ForestGreen;
+            series4.Legend = "Legend1";
+            series4.Name = "Number of Employee per Class";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(571, 143);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
@@ -2347,111 +2382,6 @@
             this.dateHired1.Name = "dateHired1";
             this.dateHired1.ReadOnly = true;
             // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(107, 111);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 6;
-            this.button14.Text = "Upload";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Location = new System.Drawing.Point(95, 8);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(97, 123);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 7;
-            this.pictureBox7.TabStop = false;
-            // 
-            // birthcertificate
-            // 
-            this.birthcertificate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.birthcertificate.DataPropertyName = "birthcertificate";
-            this.birthcertificate.HeaderText = "Birth Certificate";
-            this.birthcertificate.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.birthcertificate.Name = "birthcertificate";
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.FillWeight = 12.69035F;
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            // 
-            // offordno
-            // 
-            this.offordno.DataPropertyName = "offordno";
-            this.offordno.FillWeight = 12.69035F;
-            this.offordno.HeaderText = "Office Order Number";
-            this.offordno.Name = "offordno";
-            // 
-            // Specifics
-            // 
-            this.Specifics.DataPropertyName = "specifics";
-            this.Specifics.FillWeight = 12.69035F;
-            this.Specifics.HeaderText = "Specifics";
-            this.Specifics.Name = "Specifics";
-            // 
-            // AwardPenalty
-            // 
-            this.AwardPenalty.DataPropertyName = "awardpen";
-            this.AwardPenalty.FillWeight = 12.69035F;
-            this.AwardPenalty.HeaderText = "Award Penalty";
-            this.AwardPenalty.Name = "AwardPenalty";
-            // 
-            // Delete1
-            // 
-            this.Delete1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Delete1.FillWeight = 70F;
-            this.Delete1.HeaderText = "";
-            this.Delete1.Name = "Delete1";
-            this.Delete1.Text = "Remove";
-            this.Delete1.UseColumnTextForButtonValue = true;
-            this.Delete1.Width = 70;
-            // 
-            // datefrom
-            // 
-            this.datefrom.DataPropertyName = "datefrom";
-            this.datefrom.HeaderText = "Date From";
-            this.datefrom.Name = "datefrom";
-            // 
-            // dateto
-            // 
-            this.dateto.DataPropertyName = "dateto";
-            this.dateto.HeaderText = "Date To";
-            this.dateto.Name = "dateto";
-            // 
-            // positiontitle
-            // 
-            this.positiontitle.DataPropertyName = "positiontitle";
-            this.positiontitle.HeaderText = "Position Title";
-            this.positiontitle.Name = "positiontitle";
-            // 
-            // depareaoff
-            // 
-            this.depareaoff.DataPropertyName = "depareaoff";
-            this.depareaoff.HeaderText = "Department / Area Office";
-            this.depareaoff.Name = "depareaoff";
-            // 
-            // Delete2
-            // 
-            this.Delete2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Delete2.HeaderText = "";
-            this.Delete2.Name = "Delete2";
-            this.Delete2.Text = "Remove";
-            this.Delete2.UseColumnTextForButtonValue = true;
-            this.Delete2.Width = 70;
-            // 
             // Aselco201filesystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2491,13 +2421,9 @@
             this.searchemployee.PerformLayout();
             this.tabControl5.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
-            this.tabControl6.ResumeLayout(false);
-            this.tabPage12.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            this.tabPage13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
-            this.tabPage14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabControl7.ResumeLayout(false);
             this.tabPage16.ResumeLayout(false);
@@ -2539,7 +2465,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2653,10 +2578,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.TabControl tabControl5;
         private System.Windows.Forms.TabPage tabPage11;
-        private System.Windows.Forms.TabControl tabControl6;
-        private System.Windows.Forms.TabPage tabPage12;
-        private System.Windows.Forms.TabPage tabPage13;
-        private System.Windows.Forms.TabPage tabPage14;
         private System.Windows.Forms.TabPage tabPage15;
         private System.Windows.Forms.TabControl tabControl7;
         private System.Windows.Forms.TabPage tabPage16;
@@ -2702,9 +2623,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.DataGridView dataGridView8;
-        private System.Windows.Forms.DataGridView dataGridView9;
         private System.Windows.Forms.DataGridView dataGridView10;
         private System.Windows.Forms.DataGridView dataGridView11;
         private System.Windows.Forms.DataGridView dataGridView12;
@@ -2716,26 +2634,28 @@
         private System.Windows.Forms.DataGridView dataGridView18;
         private System.Windows.Forms.DataGridView dataGridView19;
         private System.Windows.Forms.DataGridView dataGridView20;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.DataGridViewImageColumn birthcertificate;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn offordno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Specifics;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AwardPenalty;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete1;
         private System.Windows.Forms.DataGridViewTextBoxColumn datefrom;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateto;
         private System.Windows.Forms.DataGridViewTextBoxColumn positiontitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn depareaoff;
         private System.Windows.Forms.DataGridViewButtonColumn Delete2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn offordno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Specifics;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AwardPenalty;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.DataGridViewImageColumn imageins;
+        private System.Windows.Forms.DataGridViewTextBoxColumn certificatetype;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateadded;
     }
 }

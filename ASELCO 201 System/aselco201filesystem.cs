@@ -368,11 +368,11 @@ namespace ASELCO_201_System
 
                     images = brs.ReadBytes((int)stream.Length);
                     SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
-                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, drugtestreportid, " +
                         "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
-                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, null, @employeestatus, " +
-                        "null, null, null, null, null, null, null, null, null, null, null, " +
-                        "null, null, null, null, null, @dateadded, null, @profilepic, @dateresigned, null)", con);
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
 
                     var date = DateTime.Now;
                     cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
@@ -413,11 +413,11 @@ namespace ASELCO_201_System
 
                     images = brs.ReadBytes((int)stream.Length);
                     SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
-                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, drugtestreportid, " +
                         "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
-                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, null, @employeestatus, " +
-                        "null, null, null, null, null, null, null, null, null, null, null, " +
-                        "null, null, null, null, null, @dateadded, null, @profilepic, null, @datedied)", con);
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
 
                     var date = DateTime.Now;
                     cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
@@ -458,10 +458,10 @@ namespace ASELCO_201_System
 
                     images = brs.ReadBytes((int)stream.Length);
                     SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
-                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, drugtestreportid, " +
                         "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
                         " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
-                        "null, null, null, null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, null, null, null, " +
                         "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
 
                     var date = DateTime.Now;
@@ -504,11 +504,11 @@ namespace ASELCO_201_System
 
                     images = brs.ReadBytes((int)stream.Length);
                     SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
-                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, drugtestreportid, " +
                         "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
-                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, null, @employeestatus, " +
-                        "null, null, null, null, null, null, null, null, null, null, null, " +
-                        "null, null, null, null, null, @dateadded, null, @profilepic, @dateresigned, @employeeclass)", con);
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
 
                     var date = DateTime.Now;
                     cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
@@ -548,11 +548,11 @@ namespace ASELCO_201_System
 
                     images = brs.ReadBytes((int)stream.Length);
                     SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
-                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, drugtestreportid, " +
                         "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
-                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, null, @employeestatus, " +
-                        "null, null, null, null, null, null, null, null, null, null, null, " +
-                        "null, null, null, null, null, @dateadded, null, @profilepic, null, @datedied)", con);
+                        " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
+                        "null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
 
                     var date = DateTime.Now;
                     cmd.Parameters.AddWithValue("@id", textBox11.Text.Trim());
@@ -591,10 +591,10 @@ namespace ASELCO_201_System
 
                     images = brs.ReadBytes((int)stream.Length);
                     SqlCommand cmd = new SqlCommand("insert into employeeRec(id, fname, lname, mname, birthDate, birthplace, educattainment, datehired, sssno, hdmfno, tin, philhealth, employeeclass, employeestatus, " +
-                        "birthcertificate, marriagecertificate, diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, medicalcertificateid, drugtestreportid, " +
+                        "diploma, barangayclearance, neuropsyclearance, judgesclearance, tor, officeorders, notices, drugtestreportid, " +
                         "memorandumid, contractsid, performanceevalid, servicerecordsid, meritdemeritid, dateadded, dateedited, profilepic, dateresigned, datedied)" +
                         " values(@id, @fname, @lname, @mname, @birthDate, @birthplace, @educattainment, @datehired, @sssno, @hdmfno, @tin, @philhealth, @employeeclass, @employeestatus, " +
-                        "null, null, null, null, null, null, null, null, null, null, null, " +
+                        "null, null, null, null, null, null, null, null, " +
                         "null, null, null, null, null, @dateadded, null, @profilepic, null, null)", con);
 
                     var date = DateTime.Now;
@@ -649,8 +649,7 @@ namespace ASELCO_201_System
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
+        {           
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
 
@@ -681,6 +680,16 @@ namespace ASELCO_201_System
                 pictureBox3.Image = Image2;
 
                 con.Open();
+                SqlCommand cmd4 = new SqlCommand("SELECT certificatetype, imageins, dateadded from certificate where empid=@empid;", con);
+                cmd4.Parameters.AddWithValue("@empid", label57.Text);
+                DataTable dttbl4 = new DataTable();
+                SqlDataAdapter adapt4 = new SqlDataAdapter(cmd4);
+                adapt4.Fill(dttbl4);
+
+                dataGridView7.DataSource = dttbl4;
+                dataGridView7.AutoGenerateColumns = false;
+                dataGridView7.MultiSelect = false;
+
                 SqlCommand cmd3 = new SqlCommand("SELECT j.datefrom, j.dateto, j.positiontitle, j.depareaoff FROM servicerecords j INNER JOIN employeeRec e ON  e.id = j.empid where empid=@empid;", con);
                 cmd3.Parameters.AddWithValue("@empid", label57.Text);
                 DataTable dttbl3 = new DataTable();
@@ -691,24 +700,12 @@ namespace ASELCO_201_System
                 dataGridView2.AutoGenerateColumns = false;
                 dataGridView2.MultiSelect = false;
 
-
-                SqlCommand cmd6 = new SqlCommand("SELECT birthcertificate FROM employeerec where id=@empid;", con);
-                cmd6.Parameters.AddWithValue("@empid", label57.Text);
-                DataTable dttbl6 = new DataTable();
-                SqlDataAdapter adapt6 = new SqlDataAdapter(cmd6);
-                adapt6.Fill(dttbl6);
-
-                dataGridView7.DataSource = dttbl6;
-                dataGridView7.AutoGenerateColumns = false;
-                dataGridView7.MultiSelect = false;
-
                 SqlCommand cmd2 = new SqlCommand("SELECT j.date, j.offordno, j.specifics, j.awardpen FROM meritdemerit j INNER JOIN employeeRec e ON  e.id = j.empid where fname=@fname and lname=@lname;", con);
                 cmd2.Parameters.AddWithValue("@fname", selectedRow.Cells[0].FormattedValue.ToString());
                 cmd2.Parameters.AddWithValue("@lname", selectedRow.Cells[1].FormattedValue.ToString());
                 DataTable dttbl2 = new DataTable();
                 SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
                 adapt2.Fill(dttbl2);
-
 
                 dataGridView3.DataSource = dttbl2;
                 dataGridView3.AutoGenerateColumns = false;
@@ -1102,11 +1099,13 @@ namespace ASELCO_201_System
             BinaryReader brs = new BinaryReader(stream);
 
             images = brs.ReadBytes((int)stream.Length);
-            SqlCommand cmd = new SqlCommand("update employeeRec set birthcertificate=@birthcertificate where id=@empid", con);
+            SqlCommand cmd = new SqlCommand("insert into certificate(empid, certificatetype, imageins, dateadded) values (@empid, @certificatetype, @imageins, @dateadded)", con);
 
             var date = DateTime.Now;
-            cmd.Parameters.AddWithValue("@birthcertificate", images);
+            cmd.Parameters.AddWithValue("@imageins", images);
             cmd.Parameters.AddWithValue("@empid", label57.Text);
+            cmd.Parameters.AddWithValue("@certificatetype", comboBox5.Text);
+            cmd.Parameters.AddWithValue("@dateadded", date);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Added User Successfully!");
 
@@ -1114,16 +1113,15 @@ namespace ASELCO_201_System
             cmd5.Parameters.AddWithValue("@user", "Employee " + textBox2.Text.Trim() + " " + textBox1.Text.Trim() + " has been added to the database by " + Uname + " " + Lname + ".");
             cmd5.ExecuteNonQuery();
 
-            SqlCommand cmd2 = new SqlCommand("SELECT birthcertificate FROM employeerec where id=@empid;", con);
-            cmd2.Parameters.AddWithValue("@empid", label57.Text);
-            DataTable dttbl2 = new DataTable();
-            SqlDataAdapter adapt2 = new SqlDataAdapter(cmd2);
-            adapt2.Fill(dttbl2);
+            SqlCommand cmd4 = new SqlCommand("SELECT certificatetype, imageins, dateadded from certificate where empid=@empid;", con);
+            cmd4.Parameters.AddWithValue("@empid", label57.Text);
+            DataTable dttbl4 = new DataTable();
+            SqlDataAdapter adapt4 = new SqlDataAdapter(cmd4);
+            adapt4.Fill(dttbl4);
 
-            dataGridView7.DataSource = dttbl2;
+            dataGridView7.DataSource = dttbl4;
             dataGridView7.AutoGenerateColumns = false;
             dataGridView7.MultiSelect = false;
-            con.Close();
 
             con.Close();
             clear();
